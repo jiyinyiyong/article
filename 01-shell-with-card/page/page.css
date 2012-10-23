@@ -1,0 +1,92 @@
+body {
+  margin: 0px;
+  background: #deedde;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, 'wenquanyi micro hei';
+}
+#wrap {
+  width: 800px;
+  padding: 20px;
+  padding-bottom: 100px;
+  background: #fafafa;
+  margin: 0px auto;
+}
+.title {
+  font-size: 20px;
+  font-family: Kinnari;
+}
+#inside {
+  padding: 40px 20px;
+}
+#inside>p {
+  margin: 16px 0px;
+}
+a {
+  text-decoration: none;
+  color: #00f;
+  margin: 0px 4px;
+}
+p {
+  margin: 0px;
+}
+code {
+  background: #666;
+  color: #fff;
+  padding: 4px 3px 1px;
+  margin: 0px 3px;
+  border-radius: 3px;
+}
+.term {
+  width: 100%;
+  height: 300px;
+  padding: 4px 2px;
+  background: #610561;
+  font-size: 13px;
+  color: #fff;
+  font-family: monospace;
+  font-weight: bold;
+}
+.term .indentation {
+  padding-left: 60px;
+}
+.color-dir {
+  color: #8b8bf9;
+}
+.color-exec {
+  color: #f5f53d;
+}
+.color-undefined {
+  color: #e60000;
+}
+.color-string {
+  color: #cc3;
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  49% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  99% {
+    opacity: 0;
+  }
+}
+.blink {
+  -webkit-animation: blink 1.4s infinite;
+}
+#term-2 {
+  height: 200px;
+}
+.codes {
+  background: #610561;
+  padding: 4px;
+  color: #fff;
+  font-size: 13px;
+  font-family: monospace;
+}

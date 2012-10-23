@@ -1,0 +1,158 @@
+doctype 5
+html
+  head
+    title About Shell and UI
+    meta(charset='utf-8')
+    script(src='http://192.168.1.102:7777/doodle.js')
+    link(rel='stylesheet',href='page.css')
+  body
+    #wrap
+      .title 关于 Shell 和界面的想法
+      #inside
+        p 一直我觉得 Bash 为了命令行而设计, 因而缺失了许多图形界面的强大
+        p
+          span 十天前
+          a(href='https://github.com/coffee-js/languages/issues/6').
+            我突然有了个想法, 在论坛上发帖做了些说明
+          span , 觉得是一个不错的想法
+        p Shell 适合服务器操作, 服务器出于性能考虑一般不值得有图形界面
+        p 服务器可以用图形界面做更多, 服务器上跑的网页也是图形界面
+        p 现在浏览器端应用功能越发丰富, 我觉得做出一个强大的 Shell 不会有问题
+        p 而且同理, Qt 或者 GTK 应用相对 Webkit 也是不错的选择
+        br
+        p
+          span 用 Bash 可以跑
+          code ssh
+          span , 跑
+          code top
+          span , 跑
+          code find
+          span , 各种文件操作也不会有问题
+        p
+          span 实在到了功能需求时, 通过
+          code sshfs
+          span 挂载到本地对文本进行复杂的编辑也不会有问题
+        p 但是本地写代码写应用, 以及一些复杂的桌面任务却不适合同样一个 Shell
+        p 比如操作窗口位置, 这是常用鼠标拖动去完成的, 为什么不方便用命令?
+        p 更实际的比如操作文件, JS 语言特性多, 能组合出各种功能, 为什么非要 Bash?
+        p JS 比起 Bash 有着更丰富模块, 更灵活的抽象, 难道不能胜任 Shell 的操作么?
+        br
+        p Bash 的好处在于简短, 即便在服务器没有补全的情况下也能快速操作
+        #term-1.term
+          p ➤ ls
+          p
+            span file-1 file-2 file-3 
+            span.color-dir dir-1/ dir-2/ 
+            span.color-exec dev.sh
+          p ➤ cd ; ls
+          p
+            span.color-dir dl/ desk/ music/ docs/ code/ test/
+          p ➤ rm test -rf
+          p
+            span.color-dir dl/ desk/ music/ docs/ code/
+          p ➤ ifconfig
+          p wlan0: flags=0000<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+          .indentation
+            p inet 192.168.1.0  netmask 255.255.255.0  broadcast 192.168.1.255
+            p inet6 0000::000:0000:0000:00000  prefixlen 64  scopeid 0x20<link>
+            p ether 00:26:82:b1:6d:81  txqueuelen 1000  (Ethernet)
+            p RX packets 95334  bytes 70601429 (67.3 MiB)
+            p RX errors 0  dropped 0  overruns 0  frame 0
+            p TX packets 91255  bytes 18104712 (17.2 MiB)
+            p TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+          p
+            span ➤ 
+            span.blink ▮
+        p 相对来说, 任意种语言都会被觉得冗长, 只要你想标记字符串标记括号
+        p
+          span 比如用一个
+          a(href='https://github.com/arturadib/shelljs') Shelljs
+          span 做一个环境对文件进行基本的操作
+        #term-2.term
+          p ➤ require('shelljs/global')
+          p {}
+          p ➤ ls()
+          p
+            span [ 
+            span.color-string 'shelljs' 
+            span ]
+          p ➤ cd '../'
+          p.color-undefined undefined
+          p ➤ ls()
+          p
+            span [ 
+            span.color-string
+              'doc',
+              'kit',
+              'dl',
+              'desk',
+              'pub',
+              'code',
+              'video',
+              'pic',
+              'music',
+              'tmp' 
+            span ]
+          p ➤ mkdir('test')
+          p ➤ rm('-rf', 'test')
+          p
+            span ➤ 
+            span.blink ▮
+        p 不过, 语法总是值得尝试去做改变的, 而且现在已经能制造那么多的语言
+        .codes#codes-1
+          p
+            span require(
+            span.color-string 'shelljs/global'
+            span )
+          p ls()
+          p
+            span cd 
+            span.color-string '../'
+          p
+            span mkdir(
+            span.color-string 'test'
+            span )
+          p
+            span rm(
+            span.color-string '-rf', 'test'
+            span )
+        p
+          span 比如在 LiveScript 里, 
+          code \
+          开头的字段表示字符串, 
+          code !
+          结尾的变量作为函数执行
+        p 另外就像 CoffeeScript 一样, 括号经常省略, 逗号依然用来分隔参数
+        .codes#codes-2
+          p
+            span require 
+            span.color-string \shelljs/global
+          p ls!
+          p
+            span cd 
+            span.color-string \../
+          p
+            span mkdir 
+            span.color-string \test
+          p
+            span rm 
+            span.color-string \-rf, \test
+        p
+          span 再允许多行输入, 再封装
+          code env
+          span 环境对应到
+          code [Object]
+          span 当中, 就有了另一个 Shell
+        p 同时用 JS 的运行环境很容易将返回结果收集进行更多的操作
+        br
+        p
+          span 接下来的问题是类似
+          code ssh
+          code vim
+          code byobu
+          span 这样占用了终端界面的命令, 在 JS 环境中无法展开
+        p 我的看法是, 既然能用网页作为图形界面, 我们就用图形界面去解决
+        p
+          span 这在
+          a(href='https://github.com/chjj/tty.js/') tty.js
+          span 我看到了具体的实现, 因此我觉得理所当然这是可行的
