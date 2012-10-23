@@ -1,0 +1,68 @@
+doctype 5
+html
+  head
+    title Index
+    meta(charset='utf-8')
+    script(src='http://192.168.1.102:7777/doodle.js')
+    :coffeescript
+      place = ->
+        console.log 'drawing'
+        wrap = document.querySelector '#wrap'
+        h = wrap.offsetHeight
+        all_h = innerHeight
+        if h < all_h
+          wrap.style.marginTop = "#{(all_h - h) / 2 * 0.6}px"
+      window.onresize = place
+      window.onload = place
+    :stylus
+      body
+        margin 0px
+        padding 0px
+        font-family "Helvetica Neue", Helvetica, Arial,
+          sans-serif, 'wenquanyi micro hei'
+
+      a
+        text-decoration none
+        color hsl(240,80,80)
+
+      #wrap
+        width 600px
+        margin 0px auto
+        padding 40px 20px
+        background hsl(0,0,90)
+
+        h2
+          margin 0px
+          color gray
+
+        #list
+          padding-left 20px
+
+          .item
+            margin 30px
+
+            .title
+              font-size 19px
+
+          .intro
+            p
+              margin 4px
+              font-size 14px
+              padding-left 20px
+  body
+    #wrap
+      h2 index of my articles
+      #list
+        .item
+          .title: a(href='/') about that
+          .intro
+            p that is just a little description
+            p and tha's it
+        .item
+          .title: a(href='/') about that
+          .intro
+            p that is just a little description
+        .item
+          .title: a(href='/') about that
+          .intro
+            p that is just a little description

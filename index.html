@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Index</title>
+    <meta charset="utf-8">
+    <script src="http://192.168.1.102:7777/doodle.js"></script><script type="text/javascript">
+(function() {
+  var place;
+
+  place = function() {
+    var all_h, h, wrap;
+    console.log('drawing');
+    wrap = document.querySelector('#wrap');
+    h = wrap.offsetHeight;
+    all_h = innerHeight;
+    if (h < all_h) {
+      return wrap.style.marginTop = "" + ((all_h - h) / 2 * 0.6) + "px";
+    }
+  };
+
+  window.onresize = place;
+
+  window.onload = place;
+
+}).call(this);
+</script><style type="text/css">body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, 'wenquanyi micro hei';
+}
+a {
+  text-decoration: none;
+  color: #a3a3f5;
+}
+#wrap {
+  width: 600px;
+  margin: 0px auto;
+  padding: 40px 20px;
+  background: #e6e6e6;
+}
+#wrap h2 {
+  margin: 0px;
+  color: #808080;
+}
+#wrap #list {
+  padding-left: 20px;
+}
+#wrap #list .item {
+  margin: 30px;
+}
+#wrap #list .item .title {
+  font-size: 19px;
+}
+#wrap #list .intro p {
+  margin: 4px;
+  font-size: 14px;
+  padding-left: 20px;
+}
+</style>
+  </head>
+  <body>
+    <div id="wrap">
+      <h2>index of my articles</h2>
+      <div id="list">
+        <div class="item">
+          <div class="title"><a href="/">about that</a></div>
+          <div class="intro">
+            <p>that is just a little description</p>
+            <p>and tha's it</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="title"><a href="/">about that</a></div>
+          <div class="intro">
+            <p>that is just a little description</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="title"><a href="/">about that</a></div>
+          <div class="intro">
+            <p>that is just a little description</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
