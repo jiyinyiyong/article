@@ -3,7 +3,6 @@
   <head>
     <title>About Shell and UI</title>
     <meta charset="utf-8">
-    <script src="http://192.168.1.102:7777/doodle.js"></script>
     <link rel="stylesheet" href="page.css">
   </head>
   <body>
@@ -76,7 +75,7 @@
           <p><span>mkdir(</span><span class="color-string">'test'</span><span>)</span></p>
           <p><span>rm(</span><span class="color-string">'-rf', 'test'</span><span>)</span></p>
         </div>
-        <p><span>比如在 LiveScript 里, </span><code>\</code>开头的字段表示字符串, <code>!</code>结尾的变量作为函数执行</p>
+        <p><span>比如在 LiveScript 里, </span><code>\</code><span>开头的字段表示字符串, </span><code>!</code><span>结尾的变量作为函数执行</span></p>
         <p>另外就像 CoffeeScript 一样, 括号经常省略, 逗号依然用来分隔参数</p>
         <div id="codes-2" class="codes">
           <p><span>require </span><span class="color-string">\shelljs/global</span></p>
@@ -90,7 +89,80 @@
         <p><span>接下来的问题是类似</span><code>ssh</code><code>vim</code><code>byobu</code><span>这样占用了终端界面的命令, 在 JS 环境中无法展开</span></p>
         <p>我的看法是, 既然能用网页作为图形界面, 我们就用图形界面去解决</p>
         <p><span>这在</span><a href="https://github.com/chjj/tty.js/">tty.js</a><span>我看到了具体的实现, 因此我觉得理所当然这是可行的</span></p>
+        <p>我想到图形界面原来容易实现, 于是做出界面来配合命令行编辑文件</p>
+        <p><code>file0</code><span>可以通过命令行打开, 并返回文件对象, 同时边上展开文本编辑器</span></p>
+        <p><span>文件编辑结束, 系统在终端打印该事件, 并完成文件对象的修改</span></p>
+        <div id="window-1" class="window">
+          <div class="left">
+            <p>➤ file0 = fs.open \file-0</p>
+            <p><span class="color-object">file0: [Object]</span></p>
+            <p>➤ file1 = fs.open \file-1</p>
+            <p><span class="color-object">file1: [Object]</span></p>
+            <p>➤ file2 = fs.open \file-2</p>
+            <p><span class="color-object">file2: [Object]</span></p>
+            <p>➤ file0.save!</p>
+            <div class="dialog">⇦ file0 saved!</div>
+            <p>➤ file0</p>
+            <p><span class="color-object">file0: [Object::File]</span></p>
+            <p><span>➤ </span><span class="blink">▮</span></p>
+          </div>
+          <div class="right">
+            <div class="card">
+              <div class="ctrl"><span class="name">file-1</span><span class="save">save</span><span class="drop">drop</span></div>
+              <textarea class="text">click to edit the file and click to save</textarea>
+            </div>
+            <div class="card">
+              <div class="ctrl"><span class="name">file-1</span><span class="save">save</span><span class="drop">drop</span></div>
+              <textarea class="text"></textarea>
+            </div>
+          </div>
+        </div>
+        <p><span>自然地, </span><code>save</code><span>按钮还可以用</span><code>file0.save!</code><span>来完成. 同样提供更多操作的接口</span></p><br>
+        <p>比如说从终端预览图片, 预览文字, 就和平常我们的用法是一样的</p>
+        <div id="window-2" class="window">
+          <div class="left">
+            <p>➤ echo1 = card.echo 'thanks for the photo http://color-mood.tuchong.com/2300032/'</p>
+            <p class="color-object">echo1: [Object:echo]</p>
+            <p>➤</p>
+            <p class="color-undefined">undefined</p>
+            <p>➤ pic1 = Image.view \leaf.png</p>
+            <p class="color-object">pic1: [Object:Image]</p>
+            <p><span>➤ </span><span class="blink">▮</span></p>
+          </div>
+          <div class="right">
+            <div class="card">
+              <div class="ctrl"><span class="name">close</span></div>
+              <textarea>hello world http://color-mood.tuchong.com/2300032/</textarea>
+            </div>
+            <div class="card">
+              <div class="ctrl"><span class="name">close</span></div><img src="http://photos.tuchong.com/29805/f/2300032.jpg">
+            </div>
+          </div>
+        </div>
+        <p>或者说没有必要用半个屏幕来放终端, GNOME3 的 Looking-Glass 就好了</p><img src="../pic/shot.png" class="shot"><br><br>
+        <p>到此为止, 都是一些想法和设计图, 而没有可以跑的代码</p>
+        <p>好无趣啊, 那种想到了点子却自己没有能力去改变和实现的感觉</p>
+        <p>图形界面和命令行界面之间似乎有着一道坎, 我想这是可以继续缩短的</p>
+        <p>或者只是单纯地期待自己指尖的操作系统能更轻松被操作</p><img src="../pic/ui.png" class="shot">
       </div>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jiyinyiyong';
+        // required: replace example with your forum shortname
+        
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            if (document.getElementsByTagName('head')[0]) {
+              document.getElementsByTagName('body')[0].appendChild(dsq);
+            }
+        })();
+      </script>
+      <noscript><span>Please enable JavaScript to view the</span><a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a href="http://disqus.com" class="dsq-brlink"><span>comments powered by</span><span class="logo-disqus">Disqus</span></a>
     </div>
   </body>
 </html>

@@ -3,7 +3,7 @@ html
   head
     title About Shell and UI
     meta(charset='utf-8')
-    script(src='http://192.168.1.102:7777/doodle.js')
+    //- script(src='http://192.168.1.102:7777/doodle.js')
     link(rel='stylesheet',href='page.css')
   body
     #wrap
@@ -119,9 +119,9 @@ html
         p
           span 比如在 LiveScript 里, 
           code \
-          开头的字段表示字符串, 
+          span 开头的字段表示字符串, 
           code !
-          结尾的变量作为函数执行
+          span 结尾的变量作为函数执行
         p 另外就像 CoffeeScript 一样, 括号经常省略, 逗号依然用来分隔参数
         .codes#codes-2
           p
@@ -156,3 +156,96 @@ html
           span 这在
           a(href='https://github.com/chjj/tty.js/') tty.js
           span 我看到了具体的实现, 因此我觉得理所当然这是可行的
+        p 我想到图形界面原来容易实现, 于是做出界面来配合命令行编辑文件
+        p
+          code file0
+          span 可以通过命令行打开, 并返回文件对象, 同时边上展开文本编辑器
+        p
+          span 文件编辑结束, 系统在终端打印该事件, 并完成文件对象的修改
+        .window#window-1
+          .left
+            p ➤ file0 = fs.open \file-0
+            p: span.color-object file0: [Object]
+            p ➤ file1 = fs.open \file-1
+            p: span.color-object file1: [Object]
+            p ➤ file2 = fs.open \file-2
+            p: span.color-object file2: [Object]
+            p ➤ file0.save!
+            .dialog ⇦ file0 saved!
+            p ➤ file0
+            p: span.color-object file0: [Object::File]
+            p
+              span ➤ 
+              span.blink ▮
+          .right
+            .card
+              .ctrl
+                span.name file-1
+                span.save save
+                span.drop drop
+              textarea.text click to edit the file and click to save
+            .card
+              .ctrl
+                span.name file-1
+                span.save save
+                span.drop drop
+              textarea.text
+        p
+          span 自然地, 
+          code save
+          span 按钮还可以用
+          code file0.save!
+          span 来完成. 同样提供更多操作的接口
+        br
+        p 比如说从终端预览图片, 预览文字, 就和平常我们的用法是一样的
+        .window#window-2
+          .left
+            p ➤ echo1 = card.echo 'thanks for the photo http://color-mood.tuchong.com/2300032/'
+            p.color-object echo1: [Object:echo]
+            p ➤
+            p.color-undefined undefined
+            p ➤ pic1 = Image.view \leaf.png
+            p.color-object pic1: [Object:Image]
+            p
+              span ➤ 
+              span.blink ▮
+          .right
+            .card
+              .ctrl
+                span.name close
+              textarea hello world http://color-mood.tuchong.com/2300032/
+            .card
+              .ctrl
+                span.name close
+              img(src='http://photos.tuchong.com/29805/f/2300032.jpg')
+        p 或者说没有必要用半个屏幕来放终端, GNOME3 的 Looking-Glass 就好了
+        img.shot(src='../pic/shot.png')
+        br
+        br
+        p 到此为止, 都是一些想法和设计图, 而没有可以跑的代码
+        p 好无趣啊, 那种想到了点子却自己没有能力去改变和实现的感觉
+        p 图形界面和命令行界面之间似乎有着一道坎, 我想这是可以继续缩短的
+        p 或者只是单纯地期待自己指尖的操作系统能更轻松被操作
+        img.shot(src='../pic/ui.png')
+      #disqus_thread
+      script(type="text/javascript")
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jiyinyiyong';
+        // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            if (document.getElementsByTagName('head')[0]) {
+              document.getElementsByTagName('body')[0].appendChild(dsq);
+            }
+        })();
+      noscript
+        span Please enable JavaScript to view the
+        a(href="http://disqus.com/?ref_noscript") comments powered by Disqus.
+      a.dsq-brlink(href="http://disqus.com")
+        span comments powered by
+        span.logo-disqus Disqus
