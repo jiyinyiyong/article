@@ -1,0 +1,77 @@
+body {
+  font-size: 18px;
+  width: 800px;
+  margin: 0px auto;
+  font-size: 'wenquanyi micro hei', 'microsoft yahei';
+  word-spacing: 6px;
+  padding-bottom: 400px;
+  text-shadow: 0px 0px 1px #ccc;
+  letter-spacing: 1px;
+}
+#title {
+  font-size: 50px;
+  margin: 100px -100px;
+}
+.paragraph {
+  margin: 60px 0px;
+}
+.paragraph code {
+  background: #f0f0f0;
+  padding: 6px 8px;
+  margin: 0px 8px;
+  border-radius: 6px;
+  font-family: 'monospace';
+  word-spacing: 0px;
+}
+.paragraph p {
+  padding: 9px 0px;
+  margin: 0px;
+}
+.paragraph p:hover,
+.paragraph .clicked {
+  background: #f0f0f0;
+}
+.paragraph p:hover code,
+.paragraph .clicked code,
+.paragraph p:hover a,
+.paragraph .clicked a {
+  background: #dedede;
+}
+a {
+  text-decoration: none;
+  text-transform: capitalize;
+  margin: 0px 6px;
+  background: #f0f0f0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 'wenquanyi micro hei', 'microsoft yahei';
+}
+.pre {
+  line-height: 30px;
+  padding: 10px;
+  color: #666;
+  background: #f4f4fb;
+  margin: 0px;
+  font-family: monospace;
+}
+.pre .indent {
+  padding-left: 136px;
+}
+.pre #indent2 {
+  margin-left: 34px;
+}
+.color-string {
+  color: #d9d98c;
+}
+.color-key {
+  color: #7d7de8;
+}
+.color-bracket {
+  color: #f53db8;
+}
+.color-slash {
+  color: #7de87d;
+}
+#disqus_thread {
+  margin-top: 200px;
+}

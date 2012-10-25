@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>template</title>
+    <meta charset="utf-8">
+    <script src="handle.js"></script>
+    <link rel="stylesheet" href="page.css">
+  </head>
+  <body>
+    <div id="title">为什么要学</div>
+    <div id="body">
+      <div class="paragraph">
+        <p><span>前几天看到</span><a href="http://www.stillmanzhu.org/">stillmanzhu.org</a><span>的排版, Arch 里微米黑的感觉非常不错</span></p>
+        <p>突然感到英文能有不同的字体, 组合成漂亮美观的版面, 中文好歹是有的</p>
+        <p>我尝试这模仿那一套布局, 于是有了这里的样式</p>
+        <p>此外 Linux 上不多能漂亮的微米黑字体, 在其他平台不知道能如何</p>
+      </div>
+      <div class="paragraph">
+        <p><span>几周前在看</span><a href="https://twitter.com/laerhsif">@laerhsif</a><span>推的时候突然想, 字体真好像曾经的书法</span></p>
+        <p>精致到一笔一划, 棱角和粗细, 将要消磨很多很多时间去打磨</p>
+        <p>也许未来需要去学会配色, 需要去学会字体, 都成了要一辈子忙碌的事情</p>
+      </div>
+      <div class="paragraph">
+        <p>代码的美观也值得费心. 因为看代码需要比看文本有更多细心和反复</p>
+        <p>CoffeeScript 好看是自然了, Clojure 最初也让我感到惊艳</p>
+        <div class="pre"><span class="color-bracket">(</span><span>defproject noir-example </span><span class="color-string">"0.1.0"</span>
+          <div id="indent1" class="indent"><span class="color-key">:description </span><span class="color-string">"An example of a noir project"</span><br><span class="color-key">:dependencies </span><span class="color-bracket">[[</span><span>org.clojure</span><span class="color-slash">/</span><span>clojure </span><span class="color-string">"1.2.1"</span><span class="color-bracket">]</span>
+            <div id="indent2" class="indent"><span class="color-bracket">[</span><span>noir</span><span class="color-string">"1.1.0"</span><span class="color-bracket">]]</span></div><span class="color-key">:dev-dependencies</span><span class="color-bracket">[[</span><span>lein-ring </span><span class="color-string">"0.4.3"</span><span class="color-bracket">]]</span><br><span class="color-key">:ring </span><span class="color-bracket">{</span><span class="color-key">:handler </span><span>noir-example.server</span><span class="color-slash">/</span><span>handler</span><span class="color-bracket">}</span><br><span class="color-key">:main </span><span>noir-example.server</span><span class="color-bracket">)</span>
+          </div>
+        </div>
+        <p>干净的排版要配上合适的字体配色以及背景, 连同符号格式也要美观</p>
+      </div>
+      <div class="paragraph">
+        <p>然后上边所说基本的美观也能保证了的话, 还是会有阻碍我的事物</p>
+        <p><span>比如平常在代码里, 循环的逻辑是</span><code><span>list.forEach </span><span class="color-bracket">(</span><span>item</span><span class="color-bracket">) </span><span class="color-operator">-> </span><span>print item</span></code></p>
+        <p><span>但在有有时</span><code><span class="color-key">for </span><span>item </span><span class="color-key">in </span><span>list</span></code><span>之类代码依然要求, 甚至在 C 会常用</span></p>
+        <p>当我习惯了对某种数据的操作, 并不能保证以后都能那么去理解</p>
+        <p>比如 FP 里抽象出来对列表的各种简洁的操作, 在其他语言未必有</p>
+      </div>
+      <div class="paragraph">
+        <p>另外让我犹豫的是我为什么想学 Haskell, 还有 Scheme, 这些过于抽象的 FP 语言</p>
+        <p>一方面没有 JS 这样复杂广大的生态她们并在我熟悉的领域不实用</p>
+        <p>另一方面 FP 艰涩的文档并不能给入门的我带来太多切实可行的学习路径</p>
+        <p>怀疑这就是出于一种景仰和渴望, 而找不到明确的理由去实践</p>
+        <p>比如纯函数和 Actor 模型当时作为前提的并行我所写的程序几乎用不上</p>
+        <p>或者说我所立足的位置过于尴尬找不到坚实的支点和明确的方向吧</p>
+      </div>
+      <div class="paragraph">
+        <p><span>晚上去做了</span><a href="http://projecteuler.net/problems">Project Euler</a><span>上几个题, 发现算法的数学基础我又是稀松着呢</span></p>
+        <p>此外可以想见人生的短促和知识的多样, 一刹那又浮生那种渺小</p>
+        <p>明天再写了</p>
+      </div>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jiyinyiyong';
+        // required: replace example with your forum shortname
+        
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            if (document.getElementsByTagName('head')[0]) {
+              document.getElementsByTagName('body')[0].appendChild(dsq);
+            }
+        })();
+      </script>
+      <noscript><span>Please enable JavaScript to view the</span><a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a href="http://disqus.com" class="dsq-brlink"><span>comments powered by</span><span class="logo-disqus"> </span></a>
+    </div>
+  </body>
+</html>
