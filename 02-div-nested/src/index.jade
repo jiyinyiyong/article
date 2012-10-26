@@ -1,0 +1,201 @@
+
+mixin disqus
+  p disqus
+  #disqus_thread
+  //- script(type="text/javascript")
+  //-   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  //-   var disqus_shortname = 'jiyinyiyong';
+  //-   // required: replace example with your forum shortname
+
+  //-   /* * * DON'T EDIT BELOW THIS LINE * * */
+  //-   (function() {
+  //-       var dsq = document.createElement('script');
+  //-       dsq.type = 'text/javascript';
+  //-       dsq.async = true;
+  //-       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+  //-       if (document.getElementsByTagName('head')[0]) {
+  //-         document.getElementsByTagName('body')[0].appendChild(dsq);
+  //-       }
+  //-   })();
+  //- noscript
+  //-   span Please enable JavaScript to view the
+  //-   a(href="http://disqus.com/?ref_noscript") comments powered by Disqus.
+  //- a.dsq-brlink(href="http://disqus.com")
+  //-   span comments powered by
+  //-   span.logo-disqus
+
+mixin list-item
+  .list-item
+    .logo Demo
+    .text text Demo
+
+mixin card-list
+  .list
+    mixin list-item
+    mixin list-item
+    mixin list-item
+    mixin list-item
+    mixin list-item
+
+mixin less-info
+  .less-info
+    .logo logo Demo
+    .words
+      p name
+      p age
+      p loves
+
+mixin more-info
+  .more-info
+    .info
+      p more about info
+      p so, this it a Demo
+
+mixin home
+  .home
+    mixin less-info
+    mixin more-info
+
+mixin drag
+  .drag-area
+    .page
+      span this is a web page
+      .inside
+        span something inside a page
+        #can-drag drag ,this
+      .others
+        span something else
+    .out
+      span drop that here
+
+doctype 5
+html
+  head
+    title 嵌套的 div
+    meta(charset='utf-8')
+    //- script(src='http://192.168.1.102:7777/doodle.js')
+    link(rel='stylesheet',href='page.css')
+    script(src='handle.js')
+  body
+    #wrap
+      .header 最初的想法
+      .section
+        p 这个想法在我会点技术前就萌生了, 以至于有些惊奇当时的点子现在如何如何
+        p
+          span 后来我用文本多次描述过,
+          a(href=
+            'http://jiyinyiyong.github.com/blog/posts/120725-里坊-网页的嵌套.html'
+            ) 比如旧的博客上
+          span , 或者更早的笔记上
+
+        p 最开始很清晰, 网页上的部件是独立的, 这是所有人都能一致地理解的
+        p 那么一个拖拽的动作对应元素被摘取, 就像剪报, 或者剪葡萄. 首先效果是可行的
+        .card
+          mixin drag
+        p 借助此类功能, 可以重新排列网页上的内容, 并保存在本地做其他使用
+        p 这放在 Windows8 的开始菜单上就好懂了, 一个导航栏需要能重排的
+        a.img(href='http://mashable.com/2012/10/25/windows-8-overview/',
+            title='picture from Mashable'): img(src='../pic/metro.jpeg')
+        p 之后, 我可以从每个网页上取下不同的片段, 放到一起拼凑成为一张页面
+        p
+          span 结果那段时间我着迷叫做
+          a(href='http://zh.wikipedia.org/wiki/Widget') Widget
+          span 的技术, 用在网页上提供漂亮的挂件, 并自动更新
+        p 而现在桌面甚至移动平台都很流行这种挂件了, 当时就是这么喜欢
+        a.img(href='http://www.techradar.com/news/phone-and-communications/mobile-phones/20-best-android-widgets-965387',
+          title='picture from techrepublic')
+          img(src='../pic/android.jpg')
+        p 相对来说, 现在的挂件和我想的不同在于, 我需要进行嵌套
+
+      .header 开始嵌套 DIV
+      .section
+        p 在网页中, 嵌套是常见的, 只不过, 用 HTML 写出来效果并不好, 或者说 CSS
+        p
+          span 我这里用了
+          a(href='http://www.zhangxinxu.com/wordpress/2010/12/css-box-flex属性，然后弹性盒子模型简介/')
+            code -webkit-box
+          span 这个私有属性, 此外
+          a(href='http://benfrain.com/understanding-the-css3-flexbox-flexible-box-layout-module/')
+            code flexbox
+          span 依然在演进
+        p 在 Chrome 以外浏览器或者时间长了错乱了也在预料之中. 总之能这样布局
+        .uri /index.html
+        .card#card-1
+          mixin home
+          mixin card-list
+        p
+          span 难点在于,
+          a(href='http://www.w3.org/People/Raggett/book4/ch02.html').
+            HTML 当初可不是那么设计的
+          span , 如果我想写, 几乎要重复一边所有细节
+        p 如果在一门编程语言里遇到有相同的代码要重复多遍, 恐怕不需要犹豫, 用函数
+        p
+          span 因此后端的模板引擎总有办法对付这个问题, 比如
+          a(href='http://naltatis.github.com/jade-syntax-docs/#mixin').
+            Jade
+          span 提供的
+          a(href='https://github.com/visionmedia/jade#a13') Include
+          span 和
+          a(href='https://github.com/visionmedia/jade#a14') Mixin
+        p 而且实时上我的代码尝试这样生成了, 重复的代码用一个函数重复调用
+        .img
+          img(src='../pic/code.png')
+      
+      .header 另一个问题
+      .section
+            
+        p HTML 的另一个问题是
+        p 显然, 右边的布局拆分开了依然可以是一个网页, 只不过长宽比并不对应
+        .uri /list.html
+        .card
+          mixin card-list
+        p 而其中每一项还可以对应到中央一个栏目不是么, 即便不会写 HTML 也能理解
+        .uri /item.html
+        .card#card-3
+          mixin list-item
+        p
+          span 同样, 左边做一个拆分能得到一个
+          code div
+          span , 看起来应该是这样, 或者当作一个网页
+        .uri /info.html
+        .card
+          mixin home
+
+      mixin disqus
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      

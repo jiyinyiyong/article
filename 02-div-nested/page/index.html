@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>嵌套的 div</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="page.css">
+    <script src="handle.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="header">最初的想法</div>
+      <div class="section">
+        <p>这个想法在我会点技术前就萌生了, 以至于有些惊奇当时的点子现在如何如何</p>
+        <p><span>后来我用文本多次描述过,</span><a href http://jiyinyiyong.github.com/blog/posts/120725-里坊-网页的嵌套.html>比如旧的博客上</a><span>, 或者更早的笔记上</span></p>
+        <p>最开始很清晰, 网页上的部件是独立的, 这是所有人都能一致地理解的</p>
+        <p>那么一个拖拽的动作对应元素被摘取, 就像剪报, 或者剪葡萄. 首先效果是可行的</p>
+        <div class="card">
+          <div class="drag-area">
+            <div class="page"><span>this is a web page</span>
+              <div class="inside"><span>something inside a page</span>
+                <div id="can-drag">drag ,this</div>
+              </div>
+              <div class="others"><span>something else</span></div>
+            </div>
+            <div class="out"><span>drop that here</span></div>
+          </div>
+        </div>
+        <p>借助此类功能, 可以重新排列网页上的内容, 并保存在本地做其他使用</p>
+        <p>这放在 Windows8 的开始菜单上就好懂了, 一个导航栏需要能重排的</p><a href="http://mashable.com/2012/10/25/windows-8-overview/" title="picture from Mashable" class="img"><img src="../pic/metro.jpeg"></a>
+        <p>之后, 我可以从每个网页上取下不同的片段, 放到一起拼凑成为一张页面</p>
+        <p><span>结果那段时间我着迷叫做</span><a href="http://zh.wikipedia.org/wiki/Widget">Widget</a><span>的技术, 用在网页上提供漂亮的挂件, 并自动更新</span></p>
+        <p>而现在桌面甚至移动平台都很流行这种挂件了, 当时就是这么喜欢</p><a href="http://www.techradar.com/news/phone-and-communications/mobile-phones/20-best-android-widgets-965387" title="picture from techrepublic" class="img"><img src="../pic/android.jpg"></a>
+        <p>相对来说, 现在的挂件和我想的不同在于, 我需要进行嵌套</p>
+      </div>
+      <div class="header">开始嵌套 DIV</div>
+      <div class="section">
+        <p>在网页中, 嵌套是常见的, 只不过, 用 HTML 写出来效果并不好, 或者说 CSS</p>
+        <p><span>我这里用了</span><a href="http://www.zhangxinxu.com/wordpress/2010/12/css-box-flex属性，然后弹性盒子模型简介/"><code>-webkit-box</code></a><span>这个私有属性, 此外</span><a href="http://benfrain.com/understanding-the-css3-flexbox-flexible-box-layout-module/"><code>flexbox</code></a><span>依然在演进</span></p>
+        <p>在 Chrome 以外浏览器或者时间长了错乱了也在预料之中. 总之能这样布局</p>
+        <div class="uri">/index.html</div>
+        <div id="card-1" class="card">
+          <div class="home">
+            <div class="less-info">
+              <div class="logo">logo Demo</div>
+              <div class="words">
+                <p>name</p>
+                <p>age</p>
+                <p>loves</p>
+              </div>
+            </div>
+            <div class="more-info">
+              <div class="info">
+                <p>more about info</p>
+                <p>so, this it a Demo</p>
+              </div>
+            </div>
+          </div>
+          <div class="list">
+            <div class="list-item">
+              <div class="logo">Demo</div>
+              <div class="text">text Demo</div>
+            </div>
+            <div class="list-item">
+              <div class="logo">Demo</div>
+              <div class="text">text Demo</div>
+            </div>
+            <div class="list-item">
+              <div class="logo">Demo</div>
+              <div class="text">text Demo</div>
+            </div>
+            <div class="list-item">
+              <div class="logo">Demo</div>
+              <div class="text">text Demo</div>
+            </div>
+            <div class="list-item">
+              <div class="logo">Demo</div>
+              <div class="text">text Demo</div>
+            </div>
+          </div>
+        </div>
+        <p><span>难点在于,</span><a href="http://www.w3.org/People/Raggett/book4/ch02.html">HTML 当初可不是那么设计的</a><span>, 如果我想写, 几乎要重复一边所有细节</span></p>
+        <p>如果在一门编程语言里遇到有相同的代码要重复多遍, 恐怕不需要犹豫, 用函数</p>
+        <p><span>因此后端的模板引擎总有办法对付这个问题, 比如</span><a href="http://naltatis.github.com/jade-syntax-docs/#mixin">Jade</a><span>提供的</span><a href="https://github.com/visionmedia/jade#a13">Include</a><span>和</span><a href="https://github.com/visionmedia/jade#a14">Mixin</a></p>
+        <p>而且实时上我的代码尝试这样生成了, 重复的代码用一个函数重复调用</p>
+        <div class="img"><img src="../pic/code.png"></div>
+      </div>
+      <div class="header">另一个问题</div>
+      <div class="section">
+        <p>HTML 的另一个问题是</p>
+        <p>显然, 右边的布局拆分开了依然可以是一个网页, 只不过长宽比并不对应</p>
+        <div class="uri">/list.html</div>
+        <div class="card">
+          <div class="list">
+            <div class="list-item">
+              <div class="logo">Demo</div>
+              <div class="text">text Demo</div>
+            </div>
+            <div class="list-item">
+              <div class="logo">Demo</div>
+              <div class="text">text Demo</div>
+            </div>
+            <div class="list-item">
+              <div class="logo">Demo</div>
+              <div class="text">text Demo</div>
+            </div>
+            <div class="list-item">
+              <div class="logo">Demo</div>
+              <div class="text">text Demo</div>
+            </div>
+            <div class="list-item">
+              <div class="logo">Demo</div>
+              <div class="text">text Demo</div>
+            </div>
+          </div>
+        </div>
+        <p>而其中每一项还可以对应到中央一个栏目不是么, 即便不会写 HTML 也能理解</p>
+        <div class="uri">/item.html</div>
+        <div id="card-3" class="card">
+          <div class="list-item">
+            <div class="logo">Demo</div>
+            <div class="text">text Demo</div>
+          </div>
+        </div>
+        <p><span>同样, 左边做一个拆分能得到一个</span><code>div</code><span>, 看起来应该是这样, 或者当作一个网页</span></p>
+        <div class="uri">/info.html</div>
+        <div class="card">
+          <div class="home">
+            <div class="less-info">
+              <div class="logo">logo Demo</div>
+              <div class="words">
+                <p>name</p>
+                <p>age</p>
+                <p>loves</p>
+              </div>
+            </div>
+            <div class="more-info">
+              <div class="info">
+                <p>more about info</p>
+                <p>so, this it a Demo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>disqus</p>
+      <div id="disqus_thread"></div>
+    </div>
+  </body>
+</html>

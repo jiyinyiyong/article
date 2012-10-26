@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0px;
+  background: #939f97;
+  font-family: 'wenquanyi micro hei', 'microsoft yahei';
+  word-spacing: 0.6em;
+}
+#wrap {
+  width: 940px;
+  margin: 0px auto;
+  background: #fff;
+  padding: 20px 40px 400px;
+  font-size: 18px;
+}
+.header {
+  text-align: center;
+  font-size: 30px;
+  margin: 60px;
+}
+.card {
+  width: 100%;
+  background: #e6e6e6;
+  margin: 20px 0px;
+  font-size: 24px;
+  box-shadow: 0px 0px 20px #ccc;
+}
+.card .list {
+  background: #ccc;
+  -webkit-box-flex: 2;
+}
+.card .home {
+  background: #f5a3a3;
+  -webkit-box-flex: 1;
+}
+a,
+code {
+  margin: 0px 6px;
+  border-radius: 3px;
+  padding: 2px 6px;
+color
+}
+a {
+  color: #a3a3f5;
+  text-decoration: none;
+  background: #f5f5fe;
+}
+code {
+  background: #f0f0fe;
+}
+#card-1 {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+}
+.list-item {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  color: #fff;
+  margin: 4px 0px;
+}
+.list-item .logo {
+  -webkit-box-flex: 1;
+  width: 60px;
+  height: 60px;
+  background: #a3a3f5;
+  padding: 10px;
+}
+.list-item .text {
+  -webkit-box-flex: 3;
+  padding: 10px;
+  background: #fad1d1;
+}
+.home {
+  padding: 10px;
+  color: #808080;
+}
+.home .less-info {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  background: #e6e6e6;
+}
+.home .less-info .logo {
+  -webkit-box-flex: 1;
+  background: #edfccf;
+  padding: 20px;
+}
+.home .less-info .words {
+  -webkit-box-flex: 1;
+  padding: 5px 40px;
+}
+.home .less-info .words p {
+  margin: 5px 0px;
+}
+.home .more-info {
+  background: #fff;
+  margin: 10px 0px;
+  padding: 10px;
+}
+.drag-area {
+  display: -webkit-box;
+  background: #f2f2f2;
+  padding: 10px;
+  color: #6e6ef7;
+  -webkit-box-orient: horizontal;
+}
+.drag-area .page,
+.drag-area .out {
+  -webkit-box-flex: 1;
+}
+.drag-area .inside,
+.drag-area .others {
+  background: #cfcffc;
+  margin: 20px 0px;
+  padding: 10px;
+}
+.drag-area .inside {
+  height: 130px;
+}
+.drag-area #can-drag {
+  width: 100px;
+  height: 80px;
+  background: #ebadad;
+  padding: 10px;
+  position: absolute;
+  color: #fff;
+  -webkit-animation: breath 4s infinite ease-in-out;
+  border-radius: 8px;
+}
+.img {
+  display: block;
+}
+.img img {
+  margin: 10px auto;
+  display: block;
+  border: 12px solid #e6e6e6;
+  box-shadow: 0px 0px 20px #808080;
+}
+.section {
+  margin: 30px 0px;
+}
+.section p {
+  margin: 0px;
+  padding: 10px 0px;
+}
+@-webkit-keyframes breath {
+  0% {
+    box-shadow: 0px 0px 0px #fff;
+  }
+
+  50% {
+    box-shadow: 0px 0px 70px #fff;
+  }
+
+  100% {
+    box-shadow: 0px 0px 0px #fff;
+  }
+}
+.uri {
+  background: #8a0f8a;
+  color: #fff;
+  border-radius: 4px;
+  font-family: monospace;
+  font-weight: bold;
+}
+div.uri {
+  padding: 10px 40px;
+}
+span.uri {
+  padding: 2px 6px;
+  margin: 0px 4px;
+}
