@@ -47,12 +47,49 @@ a
   text-decoration none
   background hsl(240,90,98)
 
+a.img
+  margin 10px 0px
+
 code
   background hsl(240,90,97)
 
-#card-1
+  pre
+    display inline
+
+#card-1, #card-4
   display -webkit-box
   -webkit-box-orient horizontal
+  position relative
+
+  #mask
+    position absolute
+    left 0px
+    width 100%
+    height 100%
+    background hsla(330,20,30,0.5)
+
+    .uri
+      font-size 16px
+      box-shadow 0px 0px 20px white
+      top 150px
+      position absolute
+
+    .hint-info
+      font-size 25px
+      left 100px
+      box-shadow 0px 0px 40px white
+
+    .hint-list
+      font-size 25px
+      left 540px
+
+    .hint-item
+      top 20px
+      left 600px
+    #hint-item2
+      top 80px
+    #hint-item3
+      top 270px
     
 .list-item
   display -webkit-box
@@ -161,3 +198,41 @@ div.uri
 span.uri
   padding 2px 6px
   margin 0px 4px
+
+ul
+  margin 0px
+  padding-left 60px
+
+  li
+    list-style-type upper-roman
+    line-height 40px
+
+#arch
+  display -webkit-box
+  -webkit-box-orient horizontal
+  text-transform capitalize
+
+  .implement
+    -webkit-box-flex 2
+  .script
+    -webkit-box-flex 1
+  .env
+    background hsl(240,80,90)
+    margin 10px
+    padding 10px
+  .core, .files
+    display -webkit-box
+
+    div
+      background hsl(90,80,70)
+      margin 10px
+      padding 10px
+      -webkit-box-flex 1
+
+  .script
+    background hsl(0,80,80)
+    margin 10px
+    padding 10px
+
+#disqus_thread
+  margin-top 200px
