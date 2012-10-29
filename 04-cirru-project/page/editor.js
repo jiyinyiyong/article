@@ -1,9 +1,9 @@
 var slice$ = [].slice;
 define(function(require, exports){
   var cirru, run, draw, exp, show, query, all;
-  cirru = require('../../../cirru/cirru-editor/src/cirru-editor');
-  run = require('../../../cirru/cirru-eval/src/run');
-  draw = require('../../../cirru/cirru-eval/examples/draw');
+  cirru = require('../../../cirru-editor/src/cirru-editor');
+  run = require('../../../cirru-eval/src/run');
+  draw = require('../../../cirru-eval/examples/draw');
   exp = require('./exp.js');
   show = function(){
     var args;

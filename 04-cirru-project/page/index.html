@@ -4,8 +4,8 @@
     <title>template</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="page.css">
-    <link rel="stylesheet" href="../../../cirru/cirru-editor/src/cirru-editor.css">
-    <script src="../../../cirru/cirru-editor/sea-modules/seajs/1.3.0-dev/sea.js"></script>
+    <link rel="stylesheet" href="../../../cirru-editor/src/cirru-editor.css">
+    <script src="../../../cirru-editor/sea-modules/seajs/1.3.0-dev/sea.js"></script>
     <script>
       seajs.use('./handle')
       seajs.use('./editor')
@@ -20,12 +20,12 @@
       <p><span>细节的内容我会在</span><a href="https://github.com/jiyinyiyong">Github</a><span>上写更多的细节, 这里主要是已经实现的部分的文档记录</span></p>
       <p>希望我之前的努力能带给别人方便, 更主要希望能减轻自己的困境</p>
       <p><span>代码看</span><a href="https://github.com/jiyinyiyong/cirru-editor">cirru-editor</a><span>和</span><a href="https://github.com/jiyinyiyong/cirru-eval">cirru-eval</a><span>两个部分, 代码借助</span><a href="http://seajs.org/">SeaJS</a><span>组织和拼接到一起</span></p>
-      <p>虽然说解释器, 主题还是对于 JS 各种数据类似的封装, 会 JS 的话直接开始看例子吧</p>
+      <p>虽然说解释器, 主体还是对于 JS 各种数据类似的封装, 会 JS 的话直接开始看例子吧</p>
       <div class="title">关于编辑器的使用</div>
       <p>如果感兴趣, 可以下载编辑器模块代码, 参考例子搭建. 这里讲界面用法</p>
-      <p><span>方向键和几个</span><code>ctrl+</code><span>的复制粘贴案件我模拟了一下, 另外</span><code>ctrl+m</code><span>用来输入中文</span></p>
+      <p><span>方向键和几个</span><code>ctrl+</code><span>的复制粘贴快捷键我模拟了一下, 另外</span><code>ctrl+m</code><span>用来输入中文</span></p>
       <p>点击一块变成蓝色之后, 按下字母数字就能看到反应, 而回车键用来创建嵌套</p>
-      <p>嵌套是 Cirru 的核心. 方向键和翻页键实现不够强大, 实际上频繁被用到</p>
+      <p>嵌套是 Cirru 的核心. 方向键和翻页键虽然不够强大, 但还是会频繁被用到</p>
       <p>编辑了代码之后, 点击对应红色查看运行结果. 只能算个例子吧, 很多情况会出错的</p>
       <p><span>输出的结果是</span><code>global</code><span>作用域当中的内容, 另外就是一数字形式输出的</span><code>print</code></p>
       <div class="title">基本的字符串数字和打印</div>
@@ -62,11 +62,58 @@
       <div class="title">函数的作用域</div>
       <p>函数的意思是作用域保存为闭包, 下次调用时可以引用到闭包里的数据</p>
       <p>我好奇另一种, 比如函数局部作用域是继承在执行环境中的数据, 动态词法域?</p>
+      <p><span>我代码里的处理依然是创建了作用域, 但</span><code>__proto__</code><span>是指向执行环境的这个对象的</span></p>
       <div class="pair">
         <div id="editor-4" class="cirru-editor"></div>
         <div id="result-4" class="result"></div>
       </div>
-      <mixin></mixin>
+      <div class="title">if 语句选择判断</div>
+      <p>尝试做了一下判断, 比较简单, 那么尝试写一下递归好了</p>
+      <p><span>另外和</span><code>if</code><span>搭配在一起用的有</span><code>do</code><span>, 否则执行多个语句就显得很不实际了</span></p>
+      <div class="pair">
+        <div id="editor-5" class="cirru-editor"></div>
+        <div id="result-5" class="result"></div>
+      </div>
+      <div class="title">遍历列表和 JSON</div>
+      <p>语法比较死板, 还需要前面的函数可用的情况下才能显示. 分开两个函数</p>
+      <div class="pair">
+        <div id="editor-6" class="cirru-editor"></div>
+        <div id="result-6" class="result"></div>
+      </div>
+      <div class="title">类似 macro 之类的操作</div>
+      <p>这个大概要涉及代码生成代码了. 我只是尝试做出来两个例子, 验证是否可行</p>
+      <p><code>data</code><span>函数将代码读取成数据, 通过</span><code>read</code><span>可以重新作为代码执行</span></p>
+      <p><span>而在</span><code>mess</code><span>函数中, 嵌入的</span><code>~not~macro</code><span>将会被解析为代码, 其余则解析为函数</span></p>
+      <p><code>mess</code><span>返回的结果通过</span><code>eval</code><span>可以执行, 原本我想用</span><code>read</code><span>统一的, 结果可以说是能力不够吧</span></p>
+      <div class="pair">
+        <div id="editor-7" class="cirru-editor"></div>
+        <div id="result-7" class="result"></div>
+      </div>
+      <div class="title">关于进展和计划</div>
+      <p>简单说就是没计划.. 我的目标是展示摆脱符号语法的可能性, 现在明显那是可行的</p>
+      <p>其中出现了一些有趣的特性, 可以要成为实用的语言, 还不知道要走多少路</p>
+      <p>如果有人愿意接着这个想法继续往前推进, 尽管不科学, 但那的确是我所期待的</p>
+      <p><span>单独的例子将会放到</span><a href="http://jiyinyiyong.github.com/cirru-eval/examples/">gh-pages</a><span>上, 建议用 Chrome 访问, 因为兼容性比较难处理</span></p>
+      <p><span>发现 bug 可到</span><a href="https://github.com/jiyinyiyong/article">Issue</a><span>里反馈, 虽然说我的能力未必能全修好, 总可以试试</span></p>
+      <div id="disqus_thread">
+        <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+          var disqus_shortname = 'jiyinyiyong';
+          // required: replace example with your forum shortname
+          
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+              var dsq = document.createElement('script');
+              dsq.type = 'text/javascript';
+              dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              if (document.getElementsByTagName('head')[0]) {
+                document.getElementsByTagName('body')[0].appendChild(dsq);
+              }
+          })();
+        </script>
+        <noscript><span>Please enable JavaScript to view the</span><a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a href="http://disqus.com" class="dsq-brlink"><span>comments powered by</span><span class="logo-disqus"></span></a>
+      </div>
     </div>
   </body>
 </html>
