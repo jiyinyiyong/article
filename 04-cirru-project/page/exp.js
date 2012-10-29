@@ -24,7 +24,42 @@ define(function(require, exports) {
       ],
       ["print", ["minus", ["add", "a", "b"], "a"]],
       ["set", "c", ["add", "a", "b"]],
-      ["print", ["larger", "c", "a", "\t"]]
+      ["print", ["larger", "c", "a"]],
+      ["print", ["string", "string with space inside!!\t"]]
+    ],
+    [
+      ["set", "json1", ["json", ["a", ["number", "1"]]]],
+      ["set", "json2", ["json", ["a", ["number", "2"]]]],
+      ["under", "json1", ["set", "b", ["number", "11"]],
+        ["print", "a", "b"]
+      ],
+      ["inside", "json2", ["set", "b", ["number", "22"]],
+        ["print", "a", "b"]
+      ],
+      ["print", "json1", "json2\t"]
+    ],
+    [
+      ["define", ["f1", "x", "y"],
+        ["print", "x", "y"]
+      ],
+      ["set", "f2", ["lambda", ["x", "y"],
+        ["print", "x", "y"]
+      ]],
+      ["f1", ["number", "3"],
+        ["number", "4"]
+      ],
+      ["f2", ["number", "3"],
+        ["number", "4"]
+      ],
+      ["define", ["f3"],
+        ["lambda", ["x"],
+          ["add", ["get", "x"],
+            ["number", "1"]
+          ]
+        ]
+      ],
+      ["set", "tmp", ["f3"]],
+      ["print", "tmp", ["number", "5\t"]]
     ],
     ['\t'],
     // example for mess
