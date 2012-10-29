@@ -1,13 +1,39 @@
-var show, tau, slice$ = [].slice;
-show = function(){
-  var args;
-  args = slice$.call(arguments);
-  return console.log.apply(console, args);
-};
-tau = Math.PI * 2;
-window.onload = function(){
-  var canvas, pen, x$;
+var slice$ = [].slice;
+define(function(require, exports){
+  var show, tau, canvas, pen, x$;
+  show = function(){
+    var args;
+    args = slice$.call(arguments);
+    return console.log.apply(console, args);
+  };
+  tau = Math.PI * 2;
   canvas = document.querySelector('#logo');
   pen = canvas.getContext('2d');
-  return (x$ = pen, x$.clearRect(0, 0, 960, 400), x$.fillStyle = 'hsl(240,70%,90%)', x$.fillRect(0, 0, 960, 400), x$.strokeStyle = 'white', x$.fillStyle = 'white', x$.lineWidth = 20, x$.beginPath(), x$.arc(200, 200, 140, tau * 0.1, 0.9 * tau, false), x$.moveTo(370, 200), x$.lineTo(370, 340), x$.fillRect(360, 160, 20, 20), x$.moveTo(440, 160), x$.lineTo(440, 340), x$.moveTo(440, 200), x$.arc(470, 200, 30, tau / 2, 0, false), x$.moveTo(540, 160), x$.lineTo(540, 340), x$.moveTo(540, 200), x$.arc(570, 200, 30, tau / 2, 0, false), x$.moveTo(640, 160), x$.lineTo(640, 310), x$.arc(670, 310, 30, tau / 2, 0, true), x$.lineTo(700, 160), x$.moveTo(700, 310), x$.arc(730, 310, 30, tau / 2, tau / 4, true), x$.stroke());
-};
+  x$ = pen;
+  x$.clearRect(0, 0, 960, 400);
+  x$.fillStyle = 'hsl(240,70%,88%)';
+  x$.fillRect(0, 0, 960, 400);
+  x$.strokeStyle = 'white';
+  x$.fillStyle = 'white';
+  x$.lineWidth = 20;
+  x$.beginPath();
+  x$.arc(260, 200, 140, tau * 0.1, 0.9 * tau, false);
+  x$.moveTo(430, 160);
+  x$.lineTo(430, 340);
+  x$.fillRect(420, 120, 20, 20);
+  x$.moveTo(500, 160);
+  x$.lineTo(500, 340);
+  x$.moveTo(500, 200);
+  x$.arc(530, 200, 30, tau / 2, 0, false);
+  x$.moveTo(600, 160);
+  x$.lineTo(600, 340);
+  x$.moveTo(600, 200);
+  x$.arc(630, 200, 30, tau / 2, 0, false);
+  x$.moveTo(700, 160);
+  x$.lineTo(700, 310);
+  x$.arc(730, 310, 30, tau / 2, 0, true);
+  x$.lineTo(760, 160);
+  x$.moveTo(760, 310);
+  x$.arc(790, 310, 30, tau / 2, tau / 4, true);
+  x$.stroke();
+});

@@ -3,17 +3,49 @@
   <head>
     <title>template</title>
     <meta charset="utf-8">
-    <script src="http://192.168.1.102:7777/doodle.js"></script>
+    <script src="http://192.168.1.104:7777/doodle.js"></script>
     <link rel="stylesheet" href="page.css">
-    <script src="handle.js"></script>
+    <link rel="stylesheet" href="../../../cirru/cirru-editor/src/cirru-editor.css">
+    <script src="../../../cirru/cirru-editor/sea-modules/seajs/1.3.0-dev/sea.js"></script>
+    <script>
+      seajs.use('./handle')
+      seajs.use('./editor')
+    </script>
   </head>
   <body>
     <div id="wrap">
-      <div class="title"></div>
-      <div class="title">L
-        <canvas width="960px" height="400px" id="logo"></canvas>
+      <canvas width="960px" height="400px" id="logo"></canvas>
+      <div class="title">关于 cirru project 的意图</div>
+      <p>早时候想学写解释器, 因为学一门语言适应别人的习惯其实很难, 不如自己做一遍</p>
+      <p>马上就会发现这很难, 于是很多时光的烦恼和消磨, 偶然有所得, 努力记录在这里</p>
+      <p><span>细节的内容我会在</span><a href="https://github.com/jiyinyiyong">Github</a><span>上写更多的细节, 这里主要是已经实现的部分的文档记录</span></p>
+      <p>希望我之前的努力能带给别人方便, 更主要希望能减轻自己的困境</p>
+      <p><span>代码看</span><a href="https://github.com/jiyinyiyong/cirru-editor">cirru-editor</a><span>和</span><a href="https://github.com/jiyinyiyong/cirru-eval">cirru-eval</a><span>两个部分, 代码借助</span><a href="http://seajs.org/">SeaJS</a><span>组织和拼接到一起</span></p>
+      <p>虽然说解释器, 主题还是对于 JS 各种数据类似的封装, 会 JS 的话直接开始看例子吧</p>
+      <div class="title">关于编辑器的使用</div>
+      <p>如果感兴趣, 可以下载编辑器模块代码, 参考例子搭建. 这里讲界面用法</p>
+      <p><span>方向键和几个</span><code>ctrl+</code><span>的复制粘贴案件我模拟了一下, 另外</span><code>ctrl+m</code><span>用来输入中文</span></p>
+      <p>点击一块变成蓝色之后, 按下字母数字就能看到反应, 而回车键用来创建嵌套</p>
+      <p>嵌套是 Cirru 的核心. 方向键和翻页键实现不够强大, 实际上频繁被用到</p>
+      <p>编辑了代码之后, 点击对应红色查看运行结果. 只能算个例子吧, 很多情况会出错的</p>
+      <p><span>输出的结果是</span><code>global</code><span>作用域当中的内容, 另外就是一数字形式输出的</span><code>print</code></p>
+      <div class="title">基本的字符串数字和打印</div>
+      <p>Cirru 不用符号来区别不同的数据类型, 需要用单词声明其对应 JS 的类型</p>
+      <div class="pair">
+        <div id="editor-0" class="cirru-editor"></div>
+        <div id="result-0" class="result"></div>
       </div>
-      <div id="disqus_thread"></div>
+      <div class="title">设置修改变量以及运算</div>
+      <p>对于变量没有等号语法, 相对于 Scheme 这个还是好理解的, 这样再来运算</p>
+      <div class="pair">
+        <div id="editor-1" class="cirru-editor"></div>
+        <div id="result-1" class="result"></div>
+      </div>
+      <div class="pair">
+        <div id="editor-2" class="cirru-editor"></div>
+        <div id="result-2" class="result"></div>
+      </div>
+      <mixin></mixin>
     </div>
   </body>
 </html>
