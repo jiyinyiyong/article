@@ -80,6 +80,21 @@ define(function(require, exports) {
       ["t1\t"]
     ],
     [
+      ["set", "a", ["number", "4"]],
+      ["set", "b", ["number", "4"]],
+      ["expose", "a", "set-a"],
+      ["under", ["json"],
+        ["set-a", ["number", "6"]],
+        ["set", "b", ["number", "6"]]
+      ],
+      ["print", "a", "b"],
+      ["define", ["f1"],
+        ["set", "c", ["number", "1"]],
+        ["self"]
+      ],
+      ["print", ["f1\t"]]
+    ],
+    [
       ["set", "1", ["number", "1"]],
       ["set", "2", ["number", "2"]],
       ["set", "3", ["number", "3"]],

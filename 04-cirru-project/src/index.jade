@@ -127,6 +127,19 @@ html
         code __proto__
         span 是指向执行环境的这个对象的
       mixin pair(4)
+
+      .title 操作和传递作用域
+      p
+        span 通过
+        code __proto__
+        span 实现的作用域修改上层作用域比较麻烦, 于是设置了
+        code expose
+        span 函数
+      p
+        span 另外, 通过
+        code self
+        span 函数可以取出当前函数的作用域, 取出来就是 JSON 了
+      mixin pair(5)
       
       .title if 语句选择判断
       p 尝试做了一下判断, 比较简单, 那么尝试写一下递归好了
