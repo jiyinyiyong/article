@@ -1,0 +1,197 @@
+mixin disqus
+  #disqus_thread
+    script(type="text/javascript")
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'jiyinyiyong';
+      // required: replace example with your forum shortname
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script');
+          dsq.type = 'text/javascript';
+          dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          if (document.getElementsByTagName('head')[0]) {
+            document.getElementsByTagName('body')[0].appendChild(dsq);
+          }
+      })();
+    noscript
+      span Please enable JavaScript to view the
+      a(href="http://disqus.com/?ref_noscript") comments powered by Disqus.
+    a.dsq-brlink(href="http://disqus.com")
+      span comments powered by
+      span.logo-disqus
+
+mixin pair(n)
+  - var editor_name = 'editor-' + n
+  - var result_name = 'result-' + n
+  .pair
+    .cirru-editor(id='#{editor_name}')
+    .result(id="#{result_name}")
+
+doctype 5
+html
+  head
+    title template
+    meta(charset='utf-8')
+    script(src='http://192.168.1.104:7777/doodle.js')
+    link(rel='stylesheet',href='page.css')
+    link(rel='stylesheet',href='en.css')
+    link(rel='stylesheet',href='../../../cirru-editor/src/cirru-editor.css')
+    script(src='../../../cirru-editor/sea-modules/seajs/1.3.0-dev/sea.js')
+    script
+      seajs.use('./handle')
+      seajs.use('./editor')
+  body
+    #wrap
+      canvas(width='960px',height='400px')#logo
+      .title intentions of cirru project
+      p I'm interested about making languages for it's hard to learn languages made by others.
+      p As I tried to learn and write, I found it really hard to achieve.
+      p
+        span I'll write more about this on
+        a(href='https://github.com/jiyinyiyong') Github
+        span where I always put my docs.
+      p Hopefully, this can be helpful to others and myself.
+      p
+        span Read
+        a(href='https://github.com/jiyinyiyong/cirru-editor') cirru-editor
+        span and
+        a(href='https://github.com/jiyinyiyong/cirru-eval') cirru-eval
+        span for the code which are connected by
+        a(href='http://seajs.org/') SeaJS
+        span a CMD protocal package manager
+      p Said to be an interpreter, it's more like a simple wrap on JS data types.
+      .title usage of the editor
+      p Code of this editor can be found on Github. You may download and run in Chrome by yourself.
+      p
+        span arrow Keys and
+        code ctrl+
+        span and keys for cut/copy/paste are available,
+        code ctrl+m
+        span if used to paste characters.
+      p Click to make it blue, then type you words to explore this editor.
+      p Recursion is the core idea of Cirru. Feel free to jump in and out with arrows.
+      p Click on the red block to run the code and read the results.
+      p
+        span The varaible
+        code global
+        span shows all things inside global scope, other strings come from
+        code print
+        
+      .title characters, numbers and print
+      p Use word to declare to type, which looks almost the same as JS.
+      mixin pair(0)
+      
+      .title modify and calculation
+      p Codes in Cirru looks much like Scheme, all function a placed at head.
+      p Any character is ok to be used to name a varable, use TAB for space.
+      mixin pair(1)
+      
+      .title scope is a JSON object
+      p
+        span Similar to
+        a(href='https://github.com/coffee-js/languages/issues/5#issuecomment-9323297').
+          Flow
+        span , I use
+        code __proto__
+        span to generate new scopes, kind like JS's class constructor
+      p I just think any data in a languages should be accessable and usable to this language itself.
+      p Ideas come form prototype-based languages, like JS and Lua, looks really nice.
+      p
+        span function
+        code under
+        span and
+        code inside
+        span behave differently in editing its or its parent's scope.
+      mixin pair(2)
+      
+      .title function and anonymous function
+      p
+        span Function is nessecery. You can omit the key word
+        code return
+        span just like in Scheme.
+      p I tried but not able to make it more beautify. So it may be awkward here.
+      p
+        span Due to the feature of JS, functions binded at
+        code global
+        span may not appear, to
+        code {}
+        span looks empty.
+      mixin pair(3)
+      
+      .title scope of functions
+      p Functions have closure inside, then data in that scope will be stored.
+      p I also curious about make some thing like dynamic scopes.. looks strange..
+      p
+        span In this snippet, new scope is createed, and 
+        code __proto__
+        span is pointed to the scope where the function was called.
+      mixin pair(4)
+
+      .title deal with scopes
+      p
+        span It's hard to modify the data refering by
+        code __proto__
+        span , so I add a function
+        code expose
+        span to help.
+      p
+        span And a 
+        code self
+        span function can be used to show the scope object as JSON data.
+      mixin pair(5)
+      
+      .title if expression
+      p
+        span A good case to use
+        code if
+        span is to write a recursion, like fibonacci.
+      p
+        span And
+        code if
+        span is always used togather with
+        code do
+        span to run more than one expressions at a time.
+      mixin pair(6)
+       
+      .title index list and JSON
+      p These two functions are usable to read lists and JSON objects.
+      mixin pair(7)
+      
+      .title something like macro
+      p Sounds interesting to generate code from code, I not able to make better demo though.
+      p
+        code data
+        span is to read a list of code as data, and
+        code read
+        span reads the data as code.
+      p
+        span In function
+        code mess
+        span , the code inside
+        code ~not~macro
+        span will be run rather then be data.
+      p
+        code mess
+        span generates code for
+        code eval
+        span , it was designed to be 
+        code read
+        span , but I'was not able to finish that.
+      mixin pair(8)
+      
+      .title further plans
+      p Better to say "no plan".. My intention was to use less special characters in coding.
+      p There are some interesting features, but it's still long way to be a language.
+      p I'll be happy if anyone like it or want to push it forward.
+      p
+        span More demos can be found at
+        a(href='http://jiyinyiyong.github.com/cirru-eval/examples/') gh-pages
+        span , please use Chrome, it may break down on other browsers.
+      p
+        span Report bugs at
+        a(href='https://github.com/jiyinyiyong/article') Issue
+        span , I may try to fix if it's not too hard.
+        
+      mixin disqus

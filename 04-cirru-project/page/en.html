@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>template</title>
+    <meta charset="utf-8">
+    <script src="http://192.168.1.104:7777/doodle.js"></script>
+    <link rel="stylesheet" href="page.css">
+    <link rel="stylesheet" href="en.css">
+    <link rel="stylesheet" href="../../../cirru-editor/src/cirru-editor.css">
+    <script src="../../../cirru-editor/sea-modules/seajs/1.3.0-dev/sea.js"></script>
+    <script>
+      seajs.use('./handle')
+      seajs.use('./editor')
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <canvas width="960px" height="400px" id="logo"></canvas>
+      <div class="title">intentions of cirru project</div>
+      <p>I'm interested about making languages for it's hard to learn languages made by others.</p>
+      <p>As I tried to learn and write, I found it really hard to achieve.</p>
+      <p><span>I'll write more about this on</span><a href="https://github.com/jiyinyiyong">Github</a><span>where I always put my docs.</span></p>
+      <p>Hopefully, this can be helpful to others and myself.</p>
+      <p><span>Read</span><a href="https://github.com/jiyinyiyong/cirru-editor">cirru-editor</a><span>and</span><a href="https://github.com/jiyinyiyong/cirru-eval">cirru-eval</a><span>for the code which are connected by</span><a href="http://seajs.org/">SeaJS</a><span>a CMD protocal package manager</span></p>
+      <p>Said to be an interpreter, it's more like a simple wrap on JS data types.</p>
+      <div class="title">usage of the editor</div>
+      <p>Code of this editor can be found on Github. You may download and run in Chrome by yourself.</p>
+      <p><span>arrow Keys and</span><code>ctrl+</code><span>and keys for cut/copy/paste are available,</span><code>ctrl+m</code><span>if used to paste characters.</span></p>
+      <p>Click to make it blue, then type you words to explore this editor.</p>
+      <p>Recursion is the core idea of Cirru. Feel free to jump in and out with arrows.</p>
+      <p>Click on the red block to run the code and read the results.</p>
+      <p><span>The varaible</span><code>global</code><span>shows all things inside global scope, other strings come from</span><code>print</code></p>
+      <div class="title">characters, numbers and print</div>
+      <p>Use word to declare to type, which looks almost the same as JS.</p>
+      <div class="pair">
+        <div id="editor-0" class="cirru-editor"></div>
+        <div id="result-0" class="result"></div>
+      </div>
+      <div class="title">modify and calculation</div>
+      <p>Codes in Cirru looks much like Scheme, all function a placed at head.</p>
+      <p>Any character is ok to be used to name a varable, use TAB for space.</p>
+      <div class="pair">
+        <div id="editor-1" class="cirru-editor"></div>
+        <div id="result-1" class="result"></div>
+      </div>
+      <div class="title">scope is a JSON object</div>
+      <p><span>Similar to</span><a href="https://github.com/coffee-js/languages/issues/5#issuecomment-9323297">Flow</a><span>, I use</span><code>__proto__</code><span>to generate new scopes, kind like JS's class constructor</span></p>
+      <p>I just think any data in a languages should be accessable and usable to this language itself.</p>
+      <p>Ideas come form prototype-based languages, like JS and Lua, looks really nice.</p>
+      <p><span>function</span><code>under</code><span>and</span><code>inside</code><span>behave differently in editing its or its parent's scope.</span></p>
+      <div class="pair">
+        <div id="editor-2" class="cirru-editor"></div>
+        <div id="result-2" class="result"></div>
+      </div>
+      <div class="title">function and anonymous function</div>
+      <p><span>Function is nessecery. You can omit the key word</span><code>return</code><span>just like in Scheme.</span></p>
+      <p>I tried but not able to make it more beautify. So it may be awkward here.</p>
+      <p><span>Due to the feature of JS, functions binded at</span><code>global</code><span>may not appear, to</span><code>{}</code><span>looks empty.</span></p>
+      <div class="pair">
+        <div id="editor-3" class="cirru-editor"></div>
+        <div id="result-3" class="result"></div>
+      </div>
+      <div class="title">scope of functions</div>
+      <p>Functions have closure inside, then data in that scope will be stored.</p>
+      <p>I also curious about make some thing like dynamic scopes.. looks strange..</p>
+      <p><span>In this snippet, new scope is createed, and </span><code>__proto__</code><span>is pointed to the scope where the function was called.</span></p>
+      <div class="pair">
+        <div id="editor-4" class="cirru-editor"></div>
+        <div id="result-4" class="result"></div>
+      </div>
+      <div class="title">deal with scopes</div>
+      <p><span>It's hard to modify the data refering by</span><code>__proto__</code><span>, so I add a function</span><code>expose</code><span>to help.</span></p>
+      <p><span>And a </span><code>self</code><span>function can be used to show the scope object as JSON data.</span></p>
+      <div class="pair">
+        <div id="editor-5" class="cirru-editor"></div>
+        <div id="result-5" class="result"></div>
+      </div>
+      <div class="title">if expression</div>
+      <p><span>A good case to use</span><code>if</code><span>is to write a recursion, like fibonacci.</span></p>
+      <p><span>And</span><code>if</code><span>is always used togather with</span><code>do</code><span>to run more than one expressions at a time.</span></p>
+      <div class="pair">
+        <div id="editor-6" class="cirru-editor"></div>
+        <div id="result-6" class="result"></div>
+      </div>
+      <div class="title">index list and JSON</div>
+      <p>These two functions are usable to read lists and JSON objects.</p>
+      <div class="pair">
+        <div id="editor-7" class="cirru-editor"></div>
+        <div id="result-7" class="result"></div>
+      </div>
+      <div class="title">something like macro</div>
+      <p>Sounds interesting to generate code from code, I not able to make better demo though.</p>
+      <p><code>data</code><span>is to read a list of code as data, and</span><code>read</code><span>reads the data as code.</span></p>
+      <p><span>In function</span><code>mess</code><span>, the code inside</span><code>~not~macro</code><span>will be run rather then be data.</span></p>
+      <p><code>mess</code><span>generates code for</span><code>eval</code><span>, it was designed to be </span><code>read</code><span>, but I'was not able to finish that.</span></p>
+      <div class="pair">
+        <div id="editor-8" class="cirru-editor"></div>
+        <div id="result-8" class="result"></div>
+      </div>
+      <div class="title">further plans</div>
+      <p>Better to say "no plan".. My intention was to use less special characters in coding.</p>
+      <p>There are some interesting features, but it's still long way to be a language.</p>
+      <p>I'll be happy if anyone like it or want to push it forward.</p>
+      <p><span>More demos can be found at</span><a href="http://jiyinyiyong.github.com/cirru-eval/examples/">gh-pages</a><span>, please use Chrome, it may break down on other browsers.</span></p>
+      <p><span>Report bugs at</span><a href="https://github.com/jiyinyiyong/article">Issue</a><span>, I may try to fix if it's not too hard.</span></p>
+      <div id="disqus_thread">
+        <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+          var disqus_shortname = 'jiyinyiyong';
+          // required: replace example with your forum shortname
+          
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+              var dsq = document.createElement('script');
+              dsq.type = 'text/javascript';
+              dsq.async = true;
+              dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+              if (document.getElementsByTagName('head')[0]) {
+                document.getElementsByTagName('body')[0].appendChild(dsq);
+              }
+          })();
+        </script>
+        <noscript><span>Please enable JavaScript to view the</span><a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a href="http://disqus.com" class="dsq-brlink"><span>comments powered by</span><span class="logo-disqus"></span></a>
+      </div>
+    </div>
+  </body>
+</html>
