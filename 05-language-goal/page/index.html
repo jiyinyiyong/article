@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>template</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="page.css">
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="title">关于本文</div>
+      <p><span>这一次没有 Demo 了. 为了好看, 链一些图.. 感谢</span><a href="tuchong.com">来自图虫</a><span>的图片</span></p>
+      <p>关于编程语言的理解, 我到达了一个瓶颈, 在这里, 因为缺乏对底层的理解</p>
+      <p>缺乏我接触少的应用方面的经验, 我开始犹豫和怀疑, 甚至觉得弄错了很多概念</p>
+      <p>我的学长教了关于 JS 打基础还有关于 MVC 和 OOP 实际使用的例子, 受益不少</p>
+      <p>同时随着对 Scheme 历史和现状的了解, 我意识到理论和实际差别巨大</p>
+      <p>或者说敲着键盘都不再是原先所能领会的那种感觉了</p>
+      <p>想录下我朦胧概念中对于编程语言的印象, 在这里</p>
+      <p><img src="http://photos.tuchong.com/266894/f/3625369.jpg"></p>
+      <div class="title">关于 OOP</div>
+      <p>周末被教了一遍 MVC, 开始明白, 众多的模式设计用 OO 来模拟消息</p>
+      <p>消息如开放平台的 API 被约定好. 模块之间不再有直接而紧密的关联, 因而形成隔离</p>
+      <p>好处是成为模块之后编写和修改, 直到维护都不需要有对全局细节的掌握</p>
+      <p>因为只要符合协议的约定, 系统就能运行. 大规模的系统就能完成建构</p><br>
+      <p>当然模块化的思想, 到处都有, 递归作为模块化的特例, 出现在各种语言当中</p>
+      <p>然而在 OOP 当中模块天然存在, 作为消息发送和接受的主体</p>
+      <p>我不会 Erlang, 阅读和想象中很赞叹那种不同的 CPU 上代码相互收发消息的机制</p>
+      <p>而在 JS 中模拟事件, 让我感觉非常异样. 并且, 那也不适合叫"消息"</p>
+      <p>说 DOM 有消息, 我觉得自然, 因为消息对于一门语言, 更像一种新的数据结构的功能</p>
+      <p>我是指, 那像语言中最小的不可分割的单元才能具有, 而不该源于模拟</p>
+      <p>另外 MVC 带给代码的冗余让人很难接受, 究竟谁才是机器</p>
+      <p><img src="http://photos.tuchong.com/43879/f/3497648.jpg"></p>
+      <p>中间提到说带着观念学习 MVC 很容易会想错, 我真真的就犯错误了</p>
+      <p>消息在 Smalltalk 在 Actor 历史中就是说消息, 没有说要现有语言各种模拟</p>
+      <p>我理解中应该是跨程序跨语言才开始传递消息的, 程序内部应该只是变量</p>
+      <div class="title">Scheme 和函数式语言</div>
+      <p>之前我想 Node 平台在后端不力, 需要学写的语言, 不如 Clojure 才能弥补</p>
+      <p>尝试之后, 明白 Clojure 环境的复杂性造成我不可能用在日常任务</p>
+      <p>Java 模块组织的方式简直是复杂. 甚至尝试 Looplang 也摸不着门径</p>
+      <p>此外我担忧 Common Lisp 大而全, 就去尝试 Scheme 的多个版本</p>
+      <p>发现唯有 Chicken 有足够实用的环境, 因为套用了相当多 C 平台的开发习惯</p><br>
+      <p>从 Scheme 包管理体系和历史, 渐渐明白 Scheme 并不是为解决日常问题而发明的</p>
+      <p>只是说研究计算机, SICP 无关包管理. 社区到了 R6RS 才开始思考这个</p>
+      <p>但我的理解中, 语言的演进首要是交流和分享, Lisp 反而是更远</p>
+      <p>Lisp 中的 list 保留着她最初怎样实现, 而不管人们会用在处理怎样的问题</p>
+      <p>再者看到 Lisp 方言中对一些概念的拘泥, 突然觉得 Lisp 并不神奇</p>
+      <p><img src="http://photos.tuchong.com/36169/f/2537948.jpg"></p>
+      <p>想想 Haskell, 想想宏, 我能想象有太多太多我没接触过的观念</p>
+      <p>比如并行, 比如编译器.都离我好远. 特别对浏览器来说</p>
+      <p>Chicken 所立足的那篇论文中讲到栈, 讲到 CPS, 讲到用 C 实现尾递归</p>
+      <p>想起在 JS 用 CPS 实现语言递归的例子, 我恍然发现自己认错了路</p>
+      <p>是不是说代码的变换只有在语言性能和编程范式才明确, 而不在怎样的语言</p>
+      <div class="title">为什么只谈喜好</div>
+      <p><img src="http://photos.tuchong.com/26698/f/2477463.jpg"></p>
+      <p>对于冗余的厌恶, 大概高中就成型了. 特别是括号相对缩进就是冗余</p>
+      <p>我想, 机械操作既然机器能完成, 何必来浪费时光和岁月, 还有日渐消散的精力</p>
+      <p>抽象符号强加到大脑的计算量, 又不是五十年前, 技术上依然无奈么</p>
+      <p>美观当然是其次. 我的观念里耗费过多时间在语法上是一件非常失败的事情</p>
+      <p>因为那样就没时间专心理解代码了. 所以, 有必要写代码自动处理掉</p><br>
+      <p>不幸的是, 我不仅没能完成代码, 甚至长久困扰在语法的问题上边</p>
+      <p>我尝试写 C, 学 JS, 学 Golang, 学 Ruby Python, 仅仅语法就止步了</p>
+      <p>相对 CoffeeScript, Lua, Python, Ruby, Golang 明明有着更丰富的特性</p>
+      <p>再者社区, MoonScript, Endlessruby 就算漂亮, 也不会有多少人</p>
+      <div class="title">基于原型的语言</div>
+      <p><img src="http://photos.tuchong.com/51338/f/2489693.jpg"></p>
+      <p>目前为止我所熟悉而开心的仅限于 JS, 这么语言很古怪地基于原型</p>
+      <p>以至于看到 Python 中出现 Class 关键字我难以招架, 好比另一种冗余</p>
+      <p>对象是令人费解的. 她既不限于 Lua 的 Table, 也不合历史中讲的 Message</p>
+      <p>此外还有小问题不多有的继承关系, 而继承用 __proto__ 索引反倒清晰</p>
+      <p>虽然看不清 Self 所描述的究竟是怎样的编程模型, 但我喜欢简化</p>
+      <div class="title">没有结局 Cirru</div>
+      <p>文章重点是 Cirru 才对. 即便只有图形编辑器和命令行简陋的 Demo</p>
+      <p>最好的结局是等我学 Go, 学会手写解释器编译器完成语言的自举</p>
+      <p>我有个想法, 像此前介绍的那样, 我认为作用域和 Table 应当是一致的结构</p>
+      <p>在 JS 和 Lua 中存在 JSON 和 Table, 可以被制定为函数的作用域</p>
+      <p>我观念中作用域就是树枝一般不断衍生新的分支, 形成无穷无尽的交错和关联</p>
+      <p><img src="http://photos.tuchong.com/110986/f/2141199.jpg"></p>
+      <p>简单说, 所有的代码以限定的几种数据结构相互进行数据交换</p>
+      <p>他从局部访问全局变量, 从 API 抓取数据, 都用比如 JSON 这样带结构的格式</p>
+      <p>还有浏览器即使编译运行代码, 也从获取结构化的代码开始, 而非文本</p>
+      <p>上层才是不同的进程相互间进行消息传递, 组成庞大的系统完成复杂的功能</p>
+      <p>也许就像说的, 像细胞之间的传递和协作, 形成复杂的网络和智能</p><br>
+      <p>我想象里 Cirru 是自己实现一遍类型的, 而不套用宿主语言本身的类型</p>
+      <p>就算是静态类型, 我也不要弄出 Golang 那么多困扰的符号作为语法</p>
+      <p>主体的语法跟现在一样, 用缩进和圆括号标明从属关系, 排斥逗号和花括号</p>
+      <p>再者, 数据依然要在函数名和表达式里标明类型, 而不是用符号标明</p>
+      <p>目标是让已有类型和用户创建的类型能一样清晰地呈现在语句当中</p><br>
+      <p>一门连数据类型都想着用扩展的语言, 更需要思考如何设计可靠的扩展机制了</p>
+      <p>可想未来 Cirru 一段源码, 运行时会是各种各种不用的语法出现</p>
+      <p>脚本需要加载各不相同的用来扩展语言本身的模块, 造成语法过于多样</p>
+      <p>就像很多语言都是逗号句号断句, 将所有意义酝酿在文字本身中间</p>
+      <p>至少现在我还是这么想得, 被打断之前这依然是一个目标</p>
+      <p><img src="http://photos.tuchong.com/63486/f/2132499.jpg"></p>
+      <div class="title">什么是我说的打断</div>
+      <p>有人说代码是一种手艺. 我于是的确这么想, 甚至害怕如果以后不是</p>
+      <p>同学提醒我说以后不会有工具写各种没有用处的 JS 代码了, 我因此而后怕</p>
+      <p>大公司的项目写作, 还有语言以及代码的规范, 性能的要求, 都将是因素</p>
+      <p>我出于破罐子破摔的心态, 一开始都尽量忘记. 但时间会催着我想起不是吗</p><br>
+      <p>最初我独自开始了 Linux 的探险, 因为早先的桌面定制性太差了</p>
+      <p>我希望能写各种脚本, 在前端后端帮我手法整理来自不同位置的资讯信息</p>
+      <p>又希望能弄出界面, 简化杂七杂八的窗口管理的操作, 浏览器标签操作</p>
+      <p>为此我去学编程, 于是开始长久的关于语法的抱怨和辗转</p>
+      <p>至今我不熟悉 Python, 只能期望 GNOME3 的 JS 能给出更多文档</p>
+      <p>只能期盼 API 服务更贴心, 那么我用 Node 能跑完脚本里的筛检</p>
+      <p><img src="http://photos.tuchong.com/109258/f/2074699.jpg"></p>
+      <p>时间久了. 就忘记了最初那个自己, 而依靠慢慢去想起. 有事与境迁了</p>
+      <p>盲目地跑了那么多的网站, 终于还是更加看不清世界了</p>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jiyinyiyong';
+        // required: replace example with your forum shortname
+        
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            if (document.getElementsByTagName('head')[0]) {
+              document.getElementsByTagName('body')[0].appendChild(dsq);
+            }
+        })();
+      </script>
+      <noscript><span>Please enable JavaScript to view the</span><a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a href="http://disqus.com" class="dsq-brlink"><span>comments powered by</span><span class="logo-disqus"></span></a>
+    </div>
+  </body>
+</html>
