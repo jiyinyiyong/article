@@ -3,7 +3,7 @@ html
   head
     title Index
     meta(charset='utf-8')
-    script(src='http://192.168.1.102:7777/doodle.js')
+    //- script(src='http://192.168.1.19:7777/doodle.js')
     :coffeescript
       place = ->
         console.log 'drawing'
@@ -18,8 +18,8 @@ html
       body
         margin 0px
         padding 0px
-        font-family "Helvetica Neue", Helvetica, Arial,
-          sans-serif, 'wenquanyi micro hei'
+        font-family "Helvetica Neue", 'wenquanyi micro hei', Helvetica, Arial,
+          sans-serif
 
       a
         text-decoration none
@@ -28,41 +28,52 @@ html
       #wrap
         width 600px
         margin 0px auto
-        padding 40px 20px
-        background hsl(0,0,90)
 
-        h2
-          margin 0px
+        hh
           color gray
+          font-size 30px
+          color hsl(240,60,90)
 
         #list
-          padding-left 20px
+          margin 40px 0px
 
           .item
-            margin 30px
+            margin 20px 0px
 
             .title
               font-size 19px
 
           .intro
             p
-              margin 4px
+              margin 20px
               font-size 14px
               padding-left 20px
+              color hsl(0,0,60)
   body
     #wrap
-      h2 index of my articles
+      hh 题叶
       #list
         .item
-          .title: a(href='/') about that
+          .title: a(href='01-shell-with-card/page') 关于 Shell 和界面的想法
           .intro
-            p that is just a little description
-            p and tha's it
+            p 未来的网络是城市
         .item
-          .title: a(href='/') about that
+          .title: a(href='02-div-nested/page') 嵌套的 Div
           .intro
-            p that is just a little description
+            p 网页的形态应该是嵌套的
         .item
-          .title: a(href='/') about that
+          .title: a(href='03-why-learning/page') 为什么要学
           .intro
-            p that is just a little description
+            p 我关于编程的困惑和现状
+        .item
+          .title: a(href='04-cirru-project/page') 关于 Cirru Project 的意图
+          .intro
+            p Cirru 是一门语法少于 Lisp 的语言
+        .item
+          .title: a(href='05-language-goal/page') 关于编程语言我到达的瓶颈
+          .intro
+            p OOP 和 FP 直接的徘徊 
+        .item
+          .title: a(href='')
+          .intro
+            p
