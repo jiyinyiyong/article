@@ -1,0 +1,25 @@
+
+doctype 5
+html
+  head
+    title GFM Editor
+    meta(charset="utf-8")
+    link(href='http://fonts.googleapis.com/css?family=Marcellus',rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Oxygen+Mono',rel='stylesheet', type='text/css')
+    link(rel="stylesheet",href="http://kevinburke.bitbucket.org/markdowncss/markdown.css")
+    link(rel="stylesheet",href="page.css")
+    //- script(src="http://183.147.49.19:7777/doodle.js")
+    //- script(src="https://a.alipayobjects.com/seajs/1.2.1/sea.js")
+    //- script(src="http://jiyinyiyong.github.com/lilyturf/page/lilyturf.js")
+    script(src='https://github.com/chjj/marked/raw/master/lib/marked.js')
+    script(src="handle.js")
+  body
+    #intro
+      span.name GFM Editor
+      br
+      span.author by jiyinyiyong
+      br
+      #hide Close Editor
+
+    #view
+    textarea#text
