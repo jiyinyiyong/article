@@ -18,6 +18,7 @@ window.onload = ->
   marked.setOptions
     gfm: yes
     breaks: yes
+    sanitize: no
 
   render = ->
     opacity = document.defaultView.getComputedStyle(text).opacity

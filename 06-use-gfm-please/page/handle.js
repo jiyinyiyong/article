@@ -34,7 +34,8 @@ window.onload = function() {
   hide = q('#hide');
   marked.setOptions({
     gfm: true,
-    breaks: true
+    breaks: true,
+    sanitize: false
   });
   render = function() {
     var content, end, opacity, start, tag;
