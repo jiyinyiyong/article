@@ -1,0 +1,483 @@
+
+- url = 'http://www.xiami.com/song/play?ids='
+- url+= '/song/playlist/id/1771570737/object_name/default/object_id/0'
+
+mixin note(content)
+  .note
+    .note-tag Note
+    svg: polygon.triangle(points="0,0 30,30 0,30")
+    .notes= content
+
+doctype 5
+html
+  head
+    title
+    meta(charset="utf-8")
+    link(rel="stylesheet",href="page.css")
+    //- script(src="http://183.147.49.22:7777/doodle.js")
+    //- script(src="https://a.alipayobjects.com/seajs/1.2.1/sea.js")
+    //- script(src="http://jiyinyiyong.github.com/lilyturf/page/lilyturf.js")
+    //- script(src="handle.js")
+    //- iframe(src='#{url}')
+  body(contenteditable='true')
+    .page
+      .title.text
+        span.adv 过去的
+        span.adj 很多
+        span.noun 年
+      br
+      mixin note('只是想在半夜扯点东西')
+    .page
+
+      .text
+        .conj 还
+        .verb 是
+        .noun 孩子
+        .prep 那
+        .noun 时候
+        .punc= ', '
+        .verb 没有
+        .verb 想象
+        .conj 过
+        .adj 长大的
+        .pron 我
+        .conj 会
+        .verb 是
+        .adj 什么
+        .noun 样子
+      .text
+        .conj 而
+        .verb 做
+        .num 个
+        .noun 小孩
+        .punc= ', '
+        .prep 在
+        .ver 伤心
+        .punc= ', '
+        .prep 在
+        .adj 难过的
+        .noun 时候
+        .punc= ', '
+        .conj 只要
+        .num 一场
+        .noun 大哭
+        .prep 就
+        .conj 可以
+        .verb 排遣
+      .text
+        .adv 慢慢
+        .verb 随着
+        .noun 长大
+        .punc= ', '
+        .verb 学会
+        .prep 去
+        .verb 伤心
+        .punc= ', '
+        .verb 学会
+        .prep 去
+        .verb 懊悔
+        .punc= ', '
+        .verb 学会辗转反侧
+      .text
+        .noun 青春
+        .conj 能
+        .prep 在
+        .adj 文字的
+        .noun 海洋
+        .prep 里
+        .adv 慢慢地
+        .verb 走过
+        .punc= ', '
+        .conj 可
+        .pron 我
+        .adv 无法
+        .verb 躲避
+        .noun 青春
+        .punc= ', '
+        .verb 躲避
+        .noun 长大
+      br
+      mixin note('小时候没日记, 记着的只有剩一些了')
+      br
+      .text
+        .prep 随着
+        .verb 长大
+        .punc= ', '
+        .prep 去
+        .verb 喜欢
+        .prep 去
+        .verb 苦恼
+        .punc= ', '
+        .prep 去
+        .adv 渐渐地
+        .verb 知道
+        .pron 我
+        .verb 生活
+        .prep 了
+        .num 十多年的
+        .noun 世界
+      .text
+        .pron 我
+        .adv 终究
+        .adv 没有
+        .prep 在
+        .adj 年少的
+        .noun 时候
+        .verb 读懂
+        .adj 这个
+        .noun 世界
+      .text
+        .prep 在
+        .noun 此
+        .conj 之前
+        .punc= ', '
+        .verb 学
+        .conj 会了
+        .noun 尴尬
+        .punc= ', '
+        .verb 学
+        .conj 会了
+        .noun 苦恼
+        .punc= ', '
+        .conj 也
+        .verb 学
+        .conj 会了
+        .verb 逃避
+      .text
+        .conj 最后
+        .prep 在
+        .adv 很
+        .adj 茫然
+        .conj 之间
+        .punc= ', '
+        .pron 人们
+        .verb 说
+        .punc= ', '
+        .pron 你
+        .adv 已经
+        .verb 长大
+        .aux 了
+        .punc= ', '
+        .conj 应该
+        .pron 自己
+        .prep 去
+        .verb 做
+        .noun 事情
+    .page
+      .text
+        .prep 在
+        .noun 金华
+        .verb 上
+        .noun 高中
+        .conj 时
+        .punc= ', '
+        .pron 我
+        .adv 总
+        .verb 不理解
+        .pron 人们
+        .verb 说
+        .adj 我的
+        .noun 家乡
+        .punc= ', '
+        .noun 那
+        .verb 是
+        .noun 山区
+      .text
+        .adj 之前的
+        .noun 时光
+        .pron 我
+        .conj 恐怕
+        .adv 都
+        .verb 是
+        .prep 在
+        .noun 家里
+        .verb 度过
+        .punc= ', '
+        .adv 外面
+        .adj 更远
+        .punc= ', '
+        .pron 我
+        .adv 不会
+        .prep 去
+        .verb 想
+        .verb 是
+        .noun 什么
+      .text
+        .adj 盆地的
+        .noun 黄昏
+        .punc= ', '
+        .verb 沉没
+        .prep 在
+        .adj 天际的
+        .noun 落日
+        .punc= ', '
+        .conj 也是
+        .pron 我
+        .prep 在
+        .noun 家乡
+        .adv 少
+        .verb 见
+      .text
+        .adj 那天
+        .verb 日落
+        .prep 时
+        .conj 还
+        .prep 在
+        .verb 摘梨
+        .punc= ', '
+        .conj 耐不住
+        .verb 溜
+        .prep 到
+        .noun 山顶
+        .punc= ', '
+        .verb 看见
+        .noun 夕阳
+        .prep 下
+        .noun 山峰
+        .conj 如
+        .noun 浪涛
+      br
+      .text
+        .conj 到
+        .noun 最后
+        .prep 去
+        .verb 相信
+        .prep 被
+        .verb 注定
+        .aux 了
+        .aux 的
+        .noun 命运
+        .punc= ', '
+        .pron 我
+        .verb 不知道
+        .prep 从
+        .noun 开始
+        .conj 就
+        .adv 无法
+        .verb 逃脱
+      .text
+        .verb 犯
+        .aux 了
+        .aux 的
+        .noun 错
+        .punc= ', '
+        .verb 经过
+        .noun 生命
+        .adv 久久的
+        .verb 酝酿
+        .punc= ', '
+        .pron 我
+        .adv 终于
+        .conj 能
+        .verb 看懂
+      .text
+        .pron 人们
+        .verb 需要
+        .adj 年华的
+        .noun 尺子
+        .punc= ', '
+        .conj 才
+        .verb 能够
+        .verb 丈量
+        .conj 如此
+        .verb 延长
+        .aux 了
+        .aux 的
+        .noun 错误
+      .text
+        .conj 而
+        .verb 丈量
+        .aux 的
+        .noun 一瞬
+        .punc= ', '
+        .conj 能
+        .verb 带
+        .adv 多少
+        .prep 被
+        .noun 时光
+        .verb 摧折
+        .conj 而
+        .conj 又
+        .verb 无可奈何
+        .prep 的
+        .noun 不忿
+      br
+      mixin note('高中像是注定好的')
+    .page
+      .text
+        .verb 忘
+        .adv 不掉
+        .num 第一次
+        .verb 动心
+        .aux 的
+        .pron 那人
+        .punc= ', '
+        .conj 可
+        .conj 却
+        .verb 用
+        .adj 没有
+        .noun 尽头
+        .aux 的
+        .noun 十年
+        .conj 来
+        .verb 暌隔
+      .text
+        .verb 经历
+        .aux 了
+        .noun 第一次
+        .verb 寄
+        .prep 于
+        .noun 信赖
+        .aux 的
+        .noun 创痛
+        .punc= ', '
+        .conj 到了
+        .adj 许多
+        .noun 年
+        .conj 后
+        .conj 才
+        .verb 明白
+        .noun 何者
+        .adv 值得
+        .verb 珍视
+      .text
+        .adj 诚实的
+        .noun 忍让
+        .verb 加
+        .conj 上了
+        .noun 畏惧
+        .punc= ', '
+        .verb 酿
+        .adv 成了
+        .noun 一生
+        .adv 无法
+        .verb 摆脱
+        .aux 的
+        .noun 柔弱
+      .text
+        .num 一念的
+        .noun 虚荣
+        .punc= ', '
+        .conj 也
+        .verb 埋葬
+        .aux 了
+        .noun 种子
+        .punc= ', '
+        .verb 孕育
+        .conj 出
+        .noun 萌芽
+        .punc= ', '
+        .verb 成了
+        .noun 昨天
+        .verb 成了
+        .noun 现在
+      br
+      .text
+        .pron 我
+        .verb 喜欢
+        .noun 文字
+        .punc= ', '
+        .adv 不
+        .verb 喜欢
+        .noun 言语
+        .punc= ', '
+        .adj 中间的
+        .noun 倾向
+        .prep 和
+        .noun 喜怒
+        .adv 渐渐
+        .verb 成了
+        .noun 不安
+      .text
+        .adv 慢慢地
+        .pron 我
+        .verb 看
+        .conj 到了
+        .pron 他人
+        .aux 的
+        .noun 世界
+        .punc= ', '
+        .prep 和
+        .pron 我
+        .prep 所
+        .verb 以为
+        .aux 的
+        .verb 是
+        .adv 多么地
+        .adj 不同
+      .text
+        .conj 会
+        .verb 需要
+        .noun 朋友
+        .punc= ', '
+        .conj 会
+        .verb 需要
+        .noun 责任
+        .punc= ', '
+        .conj 也要
+        .verb 学会
+        .pron 自己
+        .prep 所
+        .verb 反感
+        .aux 的
+      .text
+        .conj 而且
+        .verb 是
+        .noun 独生子女
+        .aux 的
+        .noun 时候
+        .punc= ', '
+        .conj 已经
+        .adv 无法
+        .adv 再
+        .verb 言明
+        .noun 什么
+        .verb 关于
+        .adj 那种
+        .noun 挫败
+      br
+      mixin note('回忆吧..')
+    .page
+      .text
+        .verb 变成
+        .verb 赶
+        .conj 着
+        .verb 睡觉
+        .conj 要
+        .verb 编词
+        .aux 了
+        .punc= ', '
+        .adv 现在
+        .adj 真的
+        .adv 挺晚
+        .aux 的
+        .noun 凌晨
+      .text
+        .verb 回家
+        .prep 后
+        .verb 打乱
+        .aux 了
+        .noun 习惯
+        .punc= ', '
+        .adj 许多
+        .verb 逃避
+        .aux 的
+        .punc= ', '
+        .adj 现在
+        .adv 多少
+        .verb 成
+        .aux 了
+        .adj 良心的
+        .noun 不安
+      .text
+        .adv 真
+        .verb 是
+        .prep 让
+        .pron 人
+        .verb 睡
+        .adv 不好
+        .aux 啊
+        .punc= '..'
+      br
+      mixin note('十一点多开始写, 两点半折腾完')
+    .page

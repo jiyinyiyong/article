@@ -1,0 +1,119 @@
+::-webkit-scrollbar {
+  width: 4px;
+  height: 24px;
+  background: #fff;
+}
+::-webkit-scrollbar-track {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(140,210,217,0.7);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-corner {
+  background: rgba(0,0,0,0);
+}
+body {
+  margin: 0px;
+  font-family: 'microsoft yahei', 'wenquanyi micro hei';
+}
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+input,
+textarea,
+code {
+  border: none;
+  font-size: 14px;
+  font-family: Monaco, monospace;
+}
+iframe {
+  width: 0px;
+  height: 0px;
+}
+body {
+  position: absolute;
+  height: 100%;
+  display: -webkit-flex;
+  background: #fafafa;
+}
+.page {
+  width: 600px;
+  height: 100%;
+  text-align: center;
+  display: -webkit-flex;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  -webkit-flex-direction: column;
+  font-size: 15px;
+  line-height: 30px;
+  letter-spacing: 1px;
+}
+.page .text > div {
+  display: inline;
+  margin: 0px -2px;
+}
+.page .verb {
+  color: #40bf40;
+}
+.page .noun {
+  color: #bf5540;
+}
+.page .prep {
+  color: #2626d9;
+}
+.page .adj {
+  color: #d99d26;
+}
+.page .adv {
+  color: #29a3a3;
+}
+.page .conj {
+  color: #b814b8;
+}
+.page .pron {
+  color: #d6d6d6;
+}
+.page .aux {
+  color: #b8e0c5;
+}
+.page .punc {
+  color: #999;
+  font-family: monospace;
+}
+.title {
+  vertical-align: center;
+  font-size: 34px;
+  line-height: 40px;
+}
+::selection {
+  background: #d19494;
+  color: #fff;
+}
+.note {
+  height: 20px;
+  min-width: 200px;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  box-shadow: 0px 1px 0px #d19494;
+  line-height: 20px;
+  font-size: 13px;
+  margin: 4px 0px;
+}
+.note .note-tag {
+  background: #d19494;
+  padding-left: 8px;
+  color: #f9ecec;
+}
+.note svg {
+  width: 20px;
+  height: 20px;
+}
+.note svg .triangle {
+  fill: #d19494;
+}
+.note .notes {
+  color: #666;
+  padding: 0px 40px 0px 8px;
+}

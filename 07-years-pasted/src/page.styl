@@ -1,0 +1,114 @@
+
+::-webkit-scrollbar
+  width 4px
+  height 24px
+  background hsla(0,0,100,1)
+
+::-webkit-scrollbar-track
+  width 4px
+
+::-webkit-scrollbar-thumb
+  background hsla(185,50,70,0.7)
+  border-radius 2px
+
+::-webkit-scrollbar-corner
+  background hsla(0,0,0,0)
+
+body
+  margin 0px
+  font-family 'microsoft yahei',
+    'wenquanyi micro hei'
+
+*
+  box-sizing border-box
+  -moz-box-sizing border-box
+  // box-shadow 0px 0px 4px hsl(0,0,80)
+
+input, textarea, code
+  border none
+  font-size 14px
+  font-family Monaco, monospace
+
+iframe
+  width 0px
+  height 0px
+
+body
+  position absolute
+  // width 2000px
+  height 100%
+  display -webkit-flex
+  background hsl(0,0,98)
+
+.page
+  width 600px
+  height 100%
+  text-align center
+  display -webkit-flex
+  -webkit-justify-content center
+  -webkit-align-items center
+  -webkit-flex-direction column
+  font-size 15px
+  line-height 30px
+  letter-spacing 1px
+
+  .text > div
+    display inline
+    margin 0px -2px
+
+  .verb
+    color hsl(120,50,50)
+  .noun
+    color hsl(10,50,50)
+  .prep
+    color hsl(240,70,50)
+  .adj
+    color hsl(40,70,50)
+  .adv
+    color hsl(180,60,40)
+  .conj
+    color hsl(300,80,40)
+  .pron
+    color hsl(0,0,84)
+  .aux
+    color hsl(140,40,80)
+  .punc
+    color hsl(0,0,60)
+    font-family monospace
+
+.title
+  vertical-align center
+  font-size 34px
+  line-height 40px
+
+note-color = hsl(0,40,70)
+
+::selection
+  background note-color
+  color white
+
+.note
+  height 20px
+  min-width 200px
+  display -webkit-flex
+  -webkit-flex-direction row
+  box-shadow 0px 1px 0px note-color
+  line-height 20px
+  font-size 13px
+  margin 4px 0px
+
+  .note-tag
+    background note-color
+    padding-left 8px
+    color hsl(0,50,95)
+
+  svg
+    width 20px
+    height 20px
+
+    .triangle
+      fill note-color
+
+  .notes
+    color hsl(0,0,40)
+    padding 0px 40px 0px 8px
