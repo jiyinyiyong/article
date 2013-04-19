@@ -1,0 +1,22 @@
+{
+  "name": "coder-news-blog",
+  "version": "0.0.1",
+  "description": "a blog post",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "keywords": [
+    "blog"
+  ],
+  "dependencies": {
+    "lilyturf": "*"
+  },
+  "devDependencies": {
+    "chokidar": "*"
+  },
+  "author": "jiyinyiyong",
+  "license": "BSD",
+  "readmeFilename": "readme.md"
+}

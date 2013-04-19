@@ -1,0 +1,36 @@
+
+{spawn, exec} = require "child_process"
+fs = require "fs"
+chokidar = require "chokidar"
+
+watcher = chokidar.watch "lib/"
+
+echo = (child) ->
+  child.stderr.pipe process.stderr
+  child.stdout.pipe process.stdout
+
+split = (str) -> str.split " "
+
+queue = [
+  "coffee -o lib/ -wbc coffee/"
+  "jade -O page/ -wP src/index.jade"
+  "stylus -o page/ -w src/"
+  "doodle page/"
+]
+
+command = "browserify -d lib/main.js -o page/build.js"
+build = ->
+  now = (new Date).getTime()
+  if (now - build.stamp) > 600
+    exec command, (err, stdout, stderr) ->
+      console.log "compiled build.js"
+      console.log stderr if stderr?
+    build.stamp = now
+
+build.stamp = (new Date).getTime()
+
+task "dev", "watch and convert files", ->
+  queue.map(split).forEach (array) ->
+    echo (spawn array[0], array[1..])
+
+watcher.on("add", build).on("change", build)
