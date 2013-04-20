@@ -2,7 +2,6 @@
 // variables
 
 $list_background = hsla(0,0,97,1)
-$even_post_color = hsla(0,0,87,0.9)
 
 $post_height = 71px
 $post_hover = hsla(0,0,100,1)
@@ -11,7 +10,7 @@ $item_left = 77px
 $title_size = 15px
 
 $avatar_size = 43px
-$link_color = hsla(0,0,50,0.5)
+$link_color = hsla(0,0,60,0.4)
 $line_height = 12px
 
 // global settings, css is not so modular, so.. I have to copy
@@ -41,27 +40,31 @@ body
   margin 0px
   font-family "Marcellus"
 
-// more global rules for elements
+// shared styles for both pages
+
+#home, #post
+  position fixed
+  width 100%
+  height 100%
+  background-position center
+  background-size cover
+  overflow-y scroll
+
+#list, #article
+  width 800px
+  background $list_background
+  overflow-y scroll
+  overflow-x hidden
+  padding 100px 0px
+  margin 200px 0px
+  box-shadow 0px 0px 6px hsl(0,0,70)
 
 // layout and configs about home page
 
 #home
-  position absolute
-  width 100%
-  height 100%
   background-image url("http://photos.tuchong.com/39721/f/3853593.jpg")
-  background-position center
-  background-size cover
-  
-  #list
-    position absolute
-    height 100%
-    width 800px
-    background $list_background
-    overflow-y scroll
-    overflow-x hidden
-    padding 30px 0px
 
+  #list
     .post
       position relative
       height $post_height
@@ -84,30 +87,43 @@ body
       cursor pointer
 
     .link
-      color hsl(0,0,60)
+      color $link_color
       font-size $line_height
       font-family Monaco, Consolas
-      cursor pointer
-
-  .menu
-    position fixed
-    left 940px
-    top 66px
-    color white
-    font-size 21px
-    line-height 40px
-
-    &>div
       cursor pointer
 
 // the post page
 
 #post
-  position absolute
-  height 100%
-  width 100%
-  background $list_background
+  -webkit-transition-duration 0.4s
+  -webkit-transition-property opacity
+  z-index 1
+  background-color $list_background
 
-  #show
-    height 400px
-    width 100%
+  #article
+    padding 100px 33px
+
+  #auther
+    width 43px
+    box-shadow -1px -1px 7px hsl(0,12,62)
+    vertical-align middle
+
+  #title
+    font-size 20px
+    margin-left 40px
+    display inline-block
+    vertical-align middle
+
+// the menu
+
+.menu
+  position fixed
+  left 940px
+  top 66px
+  color white
+  font-size 21px
+  line-height 40px
+  text-shadow 0px 0px 4px hsl(0,0,20)
+
+  &>div
+    cursor pointer

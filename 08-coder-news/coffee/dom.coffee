@@ -13,9 +13,22 @@ render_title = (post) ->
     @div class: "post",
       @img class: "avatar", src: auther.avatar, title: auther.name
       @div class: "item",
-        @div class: "title", data: post.content, post.title
+        @div class: "title", data: post.content, image: post.image,
+          post.title
         @span class: "link",
-          if post.link? then post.link else "self"
+          if post.link? then post.link else "@"
+
+show_post = ->
+  post = q "#post"
+  post.style.height = "100%"
+  post.style.opacity = "1"
+
+delay = (t, f) -> setTimeout f, t
+
+hide_post = ->
+  post.q "#post"
+  delay 400, -> post.style.height = "0%"
+  post.style.opacity = "0"
 
 exports.render_list = (post_list) ->
   list = q "#list"
@@ -28,8 +41,11 @@ exports.bind_list = (callback) ->
   list.onclick = callback
 
 exports.render_post = (tag) ->
+  show_post()
   q("#title").innerText = tag.innerText
-  q("#content").innerText = tag.content or ""
+  q("#content").innerText = tag.getAttribute("content") or ""
+  image = tag.getAttribute("image")
+  q("#post").style.backgroundImage = "url(#{image})"
   if tag.link
     q(".link").innerText = tag.link
     q(".link").href = "http://#{tag.link}"
@@ -43,3 +59,13 @@ exports.bind_top = (callback) ->
 
 exports.bind_new = (callback) ->
   q(".menu .new").onclick = callback
+
+exports.bind_back = (callback) ->
+  q("#back").onclick = callback
+
+exports.hide_post = ->
+  hide_post()
+
+exports.test = ->
+  delay 0, ->
+    q("#list .post .title").click()

@@ -1,4 +1,5 @@
 exports.title = "关于现在这个页面, 为什么要搭建这个页面"
+exports.image = "http://photos.tuchong.com/24450/f/1915623.jpg"
 exports.content = """
 晚上认真看了几个篇新闻, 都是 Startup News 上的, 有点被打动
 本来吃过晚饭出门, 就有种三更半夜行走在学校的不安的感觉了

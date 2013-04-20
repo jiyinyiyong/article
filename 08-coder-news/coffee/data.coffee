@@ -28,6 +28,7 @@ data =
   8:
     title: "提议: 我们变通下 HN 的方式, 在 Github 上创建一个技术论坛"
     link: "http://v2ex.com/t/65472"
+    image: "http://designbycoffee.com/wp-content/uploads/2012/04/hn.jpg"
 
 list = (value for _, value of data)
 

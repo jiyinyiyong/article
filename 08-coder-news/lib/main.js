@@ -15,7 +15,10 @@ window.onload = function() {
   dom.bind_new(function() {
     return dom.render_list(post_list.by_time);
   });
-  return dom.bind_list(function(event) {
+  dom.bind_back(function() {
+    return dom.hide_post();
+  });
+  dom.bind_list(function(event) {
     var tag;
 
     tag = event.target;
@@ -26,4 +29,5 @@ window.onload = function() {
         return dom.open_link(tag.innerText);
     }
   });
+  return dom.test();
 };
