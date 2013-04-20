@@ -7,11 +7,11 @@
 }
 ::-webkit-scrollbar-track {
   width: 4px;
-  background: #242424;
+  background: rgba(0,0,0,0);
 }
 ::-webkit-scrollbar-thumb {
-  background: #fff;
   border-radius: 2px;
+  background: rgba(128,128,128,0.5);
 }
 @font-face {
   font-family: 'Marcellus';
@@ -21,15 +21,70 @@
 }
 body {
   margin: 0px;
+  font-family: "Marcellus";
 }
 #home {
   position: absolute;
   width: 100%;
   height: 100%;
+  background-image: url("http://photos.tuchong.com/39721/f/3853593.jpg");
+  background-position: center;
+  background-size: cover;
 }
 #home #list {
   position: absolute;
   height: 100%;
   width: 800px;
-  background: #e6e6e6;
+  background: #f7f7f7;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 30px 0px;
+}
+#home #list .post {
+  position: relative;
+  height: 71px;
+  padding: 13px 33px;
+}
+#home #list .post:hover {
+  background: #fff;
+}
+#home #list .avatar {
+  position: absolute;
+  width: 43px;
+  box-shadow: -1px -1px 7px #aa9292;
+}
+#home #list .item {
+  margin-left: 77px;
+}
+#home #list .title {
+  font-size: 15px;
+  line-height: 24px;
+  cursor: pointer;
+}
+#home #list .link {
+  color: #999;
+  font-size: 12px;
+  font-family: Monaco, Consolas;
+  cursor: pointer;
+}
+#home .menu {
+  position: fixed;
+  left: 940px;
+  top: 66px;
+  color: #fff;
+  font-size: 21px;
+  line-height: 40px;
+}
+#home .menu>div {
+  cursor: pointer;
+}
+#post {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #f7f7f7;
+}
+#post #show {
+  height: 400px;
+  width: 100%;
 }
