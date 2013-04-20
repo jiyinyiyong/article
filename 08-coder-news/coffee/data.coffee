@@ -1,21 +1,4 @@
 
-fs = require "fs"
-path = require "path"
-
-article_list = [
-  "./posts/about-coder-news"
-  "./posts/future-of-UI"
-  "./posts/why-collect-links"
-  "./posts/love-languages"
-  "./posts/join-communities"
-  "./posts/everyone-gets-old"
-  "./posts/you-and-me-different"
-"./posts/about-this-site"
-]
-
-a = "./posts/about-coder-news"
-require a
-
 data =
   0: require "./posts/about-coder-news"
   1: require "./posts/future-of-UI"
@@ -23,12 +6,20 @@ data =
   3: require "./posts/love-languages"
   4: require "./posts/join-communities"
   5: require "./posts/everyone-gets-old"
-  6: require "./posts/you-and-me-different"
+  6: require "./posts/smarter-people"
   7: require "./posts/about-this-site"
   8:
     title: "提议: 我们变通下 HN 的方式, 在 Github 上创建一个技术论坛"
     link: "http://v2ex.com/t/65472"
     image: "http://designbycoffee.com/wp-content/uploads/2012/04/hn.jpg"
+  9:
+    title: "Startup News"
+    link: "http://news.dbanotes.net/"
+    image: "http://python-assets.b0.upaiyun.com/june/img/main_bg.gif"
+  10:
+    title: "题叶"
+    link: "http://weibo.com/jiyinyiyong"
+    image: "http://photos.tuchong.com/108934/f/2159629.jpg"
 
 list = (value for _, value of data)
 

@@ -8,18 +8,26 @@ auther =
   name: "jiyinyiyong"
   avatar: "http://photos.tuchong.com/108934/f/2159629.jpg"
 
+escape_link = (string = "") ->
+  string.replace(/>/g, "&gt;")
+  .replace(/</g, "&lt;")
+  .replace(/(http(s)?\:\/\/\S+)/g, "<a href=\"$1\" target=\"_blank\">$1</a>")
+  .replace(/\n/g, "<br>")
+
 render_title = (post) ->
+  text = escape_link post.content
   html ->
-    @div class: "post",
-      @img class: "avatar", src: auther.avatar, title: auther.name
+    @div {"class": "post"},
+      @img {"class": "avatar", src: auther.avatar, title: auther.name}
       @div class: "item",
-        @div class: "title", data: post.content, image: post.image,
+        @div class: "title", content: text, image: post.image,
           post.title
         @span class: "link",
           if post.link? then post.link else "@"
 
 show_post = ->
   post = q "#post"
+  post.style.visibility = "visible"
   post.style.height = "100%"
   post.style.opacity = "1"
 
@@ -27,7 +35,9 @@ delay = (t, f) -> setTimeout f, t
 
 hide_post = ->
   post.q "#post"
-  delay 400, -> post.style.height = "0%"
+  delay 400, ->
+    post.style.height = "0%"
+    post.style.visibility = "hidden"
   post.style.opacity = "0"
 
 exports.render_list = (post_list) ->
@@ -43,7 +53,7 @@ exports.bind_list = (callback) ->
 exports.render_post = (tag) ->
   show_post()
   q("#title").innerText = tag.innerText
-  q("#content").innerText = tag.getAttribute("content") or ""
+  q("#content").innerHTML = tag.getAttribute("content") or ""
   image = tag.getAttribute("image")
   q("#post").style.backgroundImage = "url(#{image})"
   if tag.link

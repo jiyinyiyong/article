@@ -1,6 +1,5 @@
 
 {spawn, exec} = require "child_process"
-fs = require "fs"
 chokidar = require "chokidar"
 
 watcher = chokidar.watch "lib/"

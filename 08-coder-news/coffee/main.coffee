@@ -6,8 +6,12 @@ dom = require "./dom"
 
 window.onload = ->
   dom.render_list post_list.by_sort
-  dom.bind_top -> dom.render_list post_list.by_sort
-  dom.bind_new -> dom.render_list post_list.by_time
+  dom.bind_top ->
+    console.log "top", post_list.by_sort
+    dom.render_list post_list.by_sort
+  dom.bind_new ->
+    console.log "new", post_list.by_time
+    dom.render_list post_list.by_time
   dom.bind_back -> dom.hide_post()
 
   dom.bind_list (event) ->
@@ -18,5 +22,5 @@ window.onload = ->
       # when "item" then dom.render_post tag.q(".title")
       # when "post" then dom.render_post tag.q(".title")
 
-  # dom.hide_post()
-  dom.test()
+  dom.hide_post()
+  # dom.test()

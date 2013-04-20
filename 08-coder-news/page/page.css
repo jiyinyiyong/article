@@ -39,7 +39,7 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
   padding: 100px 0px;
-  margin: 200px 0px;
+  margin: 300px 0px 700px;
   box-shadow: 0px 0px 6px #b3b3b3;
 }
 #home {
@@ -91,6 +91,14 @@ body {
   margin-left: 40px;
   display: inline-block;
   vertical-align: middle;
+}
+#post #content {
+  margin: 54px 0px 143px;
+  line-height: 34px;
+}
+#post #content a {
+  text-decoration: none;
+  color: #4747eb;
 }
 .menu {
   position: fixed;
