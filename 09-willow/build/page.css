@@ -1,0 +1,15 @@
+
+#page {
+    color: hsl(0, 0%, 55%);
+    font-size: 21px;
+    line-height: 37px;
+    letter-spacing: 1px;
+    margin: 100px 0px 400px 150px;
+    font-family: '文泉驿等宽微米黑', 'Monaco', Monospace, '华文细黑', '微软雅黑';
+    white-space: pre;
+}
+
+::selection {
+    color: hsl(0, 0%, 13%);
+    background: hsl(0, 0%, 93%);
+}
