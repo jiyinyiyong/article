@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="page.css">
     <link rel="stylesheet" href="en.css">
-    <link rel="stylesheet" href="../../../cirru-editor/src/cirru-editor.css">
-    <script src="../../../cirru-editor/sea-modules/seajs/1.3.0-dev/sea.js"></script>
+    <link rel="stylesheet" href="../cirru-editor/src/cirru-editor.css">
+    <script src="http://seajs.org/dist/sea.js"></script>
     <script>
       seajs.use('./handle')
       seajs.use('./editor')
@@ -62,14 +62,14 @@
       <div class="title">scope of functions</div>
       <p>Functions have closure inside, then data in that scope will be stored.</p>
       <p>I also curious about make some thing like dynamic scopes.. looks strange..</p>
-      <p><span>In this snippet, new scope is createed, and </span><code>__proto__</code><span>is pointed to the scope where the function was called.</span></p>
+      <p><span>In this snippet, new scope is createed, and</span><code>__proto__</code><span>is pointed to the scope where the function was called.</span></p>
       <div class="pair">
         <div id="editor-4" class="cirru-editor"></div>
         <div id="result-4" class="result"></div>
       </div>
       <div class="title">deal with scopes</div>
       <p><span>It's hard to modify the data refering by</span><code>__proto__</code><span>, so I add a function</span><code>expose</code><span>to help.</span></p>
-      <p><span>And a </span><code>self</code><span>function can be used to show the scope object as JSON data.</span></p>
+      <p><span>And a</span><code>self</code><span>function can be used to show the scope object as JSON data.</span></p>
       <div class="pair">
         <div id="editor-5" class="cirru-editor"></div>
         <div id="result-5" class="result"></div>
@@ -91,7 +91,7 @@
       <p>Sounds interesting to generate code from code, I not able to make better demo though.</p>
       <p><code>data</code><span>is to read a list of code as data, and</span><code>read</code><span>reads the data as code.</span></p>
       <p><span>In function</span><code>mess</code><span>, the code inside</span><code>~not~macro</code><span>will be run rather then be data.</span></p>
-      <p><code>mess</code><span>generates code for</span><code>eval</code><span>, it was designed to be </span><code>read</code><span>, but I'was not able to finish that.</span></p>
+      <p><code>mess</code><span>generates code for</span><code>eval</code><span>, it was designed to be</span><code>read</code><span>, but I'was not able to finish that.</span></p>
       <div class="pair">
         <div id="editor-8" class="cirru-editor"></div>
         <div id="result-8" class="result"></div>

@@ -1,9 +1,9 @@
 
 define !(require, exports) ->
-  cirru = require \../../../cirru-editor/src/cirru-editor
-  run = require \../../../cirru-eval/src/run
-  draw = require \../../../cirru-eval/examples/draw
-  exp = require \./exp.js
+  cirru = require '../cirru-editor/src/cirru-editor'
+  run = require '../cirru-eval/src/run'
+  draw = require '../cirru-eval/examples/draw'
+  exp = require './exp.js'
   show = (...args) -> console.log.apply console, args
 
   query = -> document.querySelector it

@@ -1,0 +1,23 @@
+{
+    "name": "cirru-eval",
+    "version": "1.0.0",
+    "root": "#",
+    "description": "",
+    "homepage": "",
+    "author": "",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "bugs": {
+        "url": ""
+    },
+    "license": "",
+    "dependencies": {
+        "seajs": "latest"
+    },
+    "tests": ["cirru-eval"],
+    "output": {
+        "cirru-eval.js": "."
+    }
+}
