@@ -1,0 +1,98 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: rgb(214, 149, 89);
+}
+
+.line {
+    font-family: "Lucida Grande", "Hiragino Sans GB W3", 文泉驿微米黑, 微软雅黑;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(156, 22, 22, 0.68);
+    font-size: 18px;
+    line-height: 1.618em;
+    text-align: center;
+    width: 61.8%;
+    font-weight: 100;
+    font-family: "Helvetica Neue";
+    letter-spacing: 1px;
+}
+
+.about .line {
+    text-align: left;
+    padding-left: 18%;
+}
+
+.title {}
+
+.title .line {
+    font-size: 40px;
+    margin: 2em 0;
+    font-family: "Gill Sans";
+    font-weight: 100;
+}
+
+.content {}
+
+.shot {
+    padding: 0px;
+    position: relative;
+    margin: 16em 0px;
+}
+
+.shot img {
+    width: 100%;
+    margin: 0px;
+}
+
+
+.shot:after,
+.shot:before {
+    content: '';
+    width: 100%;
+    background: rgb(218, 148, 84);
+    z-index: 1000;
+    left: 0px;
+    display: block;
+    /* background: white; */
+    position: absolute;
+}
+
+.shot:before {
+    top: 0px;
+    
+    height: 17px;
+}
+.shot:after {
+    height: 21px;
+    bottom: 0px;
+}
+
+.shot .note {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    min-height: 38.2%;
+    background: rgba(37, 3, 3, 0.71);
+    opacity: 0;
+    -webkit-transition-delay: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    cursor: text;
+    padding: 1em 0;
+}
+
+.note:hover {
+    opacity: 1;
+    
+}
+
+.note .line {
+    color: rgba(255, 255, 255, 0.77);
+    text-align: left;
+    width: 100%;
+    padding-left: 18%;
+    font-size: 15px;
+}
