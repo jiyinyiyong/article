@@ -1,46 +1,39 @@
 #!/usr/bin/env coffee
-
-project = 'repo/article/10-her-OS-1'
-interval = interval: 300
-watch = no
+project = 'repo/10-her-OS-1'
 
 require 'shelljs/make'
-fs = require 'fs'
 path = require 'path'
-station = require 'devtools-reloader-station'
+mission = require 'mission'
 
-{render, setResolver} = require 'cirru-html'
-setResolver (basePath, child, scope) ->
-  dest = path.join (path.dirname basePath), child
-  scope?['@filename'] = dest
-  cat dest
+mission.time()
 
-startTime = (new Date).getTime()
-process.on 'exit', ->
-  now = (new Date).getTime()
-  duration = (now - startTime) / 1000
-  console.log "\nfinished in #{duration}s"
-
-reload = -> station.reload project if watch
-
-
-target.folder = ->
-  mkdir '-p', 'cirru', 'css'
-  exec 'touch cirru/index.cirru css/style.css'
-  exec 'touch README.md .gitignore .npmignore'
-
-target.cirru = ->
-  file = 'cirru/index.cirru'
-  html = render (cat file), '@filename': file
-  html.to 'index.html'
-  console.log 'done: cirru'
-  do reload
+cirru = ->
+  mission.cirru
+    file: 'index.cirru', from: 'cirru/', to: './', extname: '.html'
+target.cirru = -> cirru()
 
 target.compile = ->
-  target.cirru()
+  cirru()
 
 target.watch = ->
-  watch = yes
-  fs.watch 'cirru/', interval, target.cirru
+  station = mission.reload()
 
-  station.start()
+  mission.watch
+    files: ['cirru/']
+    trigger: (filepath, extname) ->
+      switch extname
+        when '.cirru'
+          cirru()
+          station.reload project
+
+target.rsync = ->
+  mission.rsync
+    file: './'
+    dest: 'tiye:~/repo/article/10-her-OS-1/'
+    options:
+      exclude: [
+        'node_modules/'
+        'coffee'
+        'README.md'
+        'js'
+      ]
